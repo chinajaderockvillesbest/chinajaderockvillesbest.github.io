@@ -74,6 +74,8 @@ html, body {
 }
 
 /* Media Queries for Section 1 */
+
+/* Media Queries for Section 1 */
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
     min-height: 788px;
@@ -108,6 +110,7 @@ html, body {
     margin-bottom: 48px;
     height: 993px;
   }
+  /* Keep 2 columns until 767px, then switch */
   .u-section-1 .u-gallery-inner-1 {
     grid-template-columns: repeat(2, auto);
   }
@@ -117,12 +120,14 @@ html, body {
   .u-section-1 .u-sheet-1 {
     min-height: auto !important;
   }
+  /* Make gallery height auto so it fits its items */
   .u-section-1 .u-gallery-1 {
-    height: auto;
+    height: auto !important;
     margin-bottom: 0;
   }
+  /* Switch to a flexible one‐column layout */
   .u-section-1 .u-gallery-inner-1 {
-    grid-template-columns: repeat(1, auto);
+    grid-template-columns: 1fr !important;
   }
 }
 
@@ -135,7 +140,7 @@ html, body {
   }
   .u-section-1 .u-gallery-1 {
     margin-bottom: 50px;
-    height: auto;
+    height: auto !important;
   }
 }
 
