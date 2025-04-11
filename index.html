@@ -36,7 +36,16 @@
   <!-- Inline CSS with mobile modifications -->
   <style>
     /* -------------------------------
-       Section 1 Styling 
+       Global Fixes
+       ------------------------------- */
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* -------------------------------
+       Section 1 Styling (Menu Gallery)
        ------------------------------- */
     .u-section-1 { background-image: none; }
     .u-section-1 .u-sheet-1 { min-height: 945px; }
@@ -53,7 +62,6 @@
       background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
       padding: 20px;
     }
-
     @media (max-width: 1199px) {
       .u-section-1 .u-sheet-1 { min-height: 788px; }
       .u-section-1 .u-text-1 { font-size: 2.25rem; width: auto; }
@@ -72,7 +80,7 @@
       .u-section-1 .u-gallery-inner-1 { grid-template-columns: repeat(2, auto); }
     }
     @media (max-width: 767px) {
-      /* Remove the large min-height on mobile */
+      /* Remove large min-height on mobile and display as one column */
       .u-section-1 .u-sheet-1 { min-height: auto; }
       .u-section-1 .u-gallery-1 { height: auto; margin-bottom: 0; }
       .u-section-1 .u-gallery-inner-1 { grid-template-columns: repeat(1, auto); }
@@ -84,7 +92,7 @@
     }
 
     /* -------------------------------
-       Section 2 Styling 
+       Section 2 Styling (Menu Buttons / Items)
        ------------------------------- */
     .u-section-2 { background-image: none; }
     .u-section-2 .u-sheet-1 { min-height: 1516px; }
@@ -94,7 +102,6 @@
       min-height: 1416px;
       grid-gap: 30px;
     }
-    /* (Additional Section 2 styles omitted for brevity) */
     @media (max-width: 991px) {
       .u-section-2 .u-sheet-1 { min-height: auto; }
     }
@@ -106,25 +113,24 @@
     }
 
     /* -------------------------------
-       Section 3 Styling 
+       Section 3 Styling (China Jade Rockville info)
        ------------------------------- */
     .u-section-3 { background-image: none; }
     .u-section-3 .u-sheet-1 { min-height: 720px; }
-    /* (Additional Section 3 styles remain as needed) */
+    /* (Additional styles are retained as provided) */
 
     /* -------------------------------
-       Section 4 Styling 
+       Section 4 Styling (Community Love Testimonials)
        ------------------------------- */
     .u-section-4 { background-image: none; }
     .u-section-4 .u-sheet-1 { min-height: 542px; }
-    /* (Section 4 additional styling remains unchanged) */
+    /* (Additional Section 4 styles remain unchanged) */
 
     /* -------------------------------
-       Section 5 Styling 
+       Section 5 Styling (Gallery Carousel Testimonials)
        ------------------------------- */
     .u-section-5 { background-image: none; }
     .u-section-5 .u-sheet-1 { min-height: 1106px; }
-    /* Remove or reduce excessive mobile min-heights in Section 5 */
     @media (max-width: 991px) {
       .u-section-5 .u-sheet-1 { min-height: auto; }
       .u-section-5 .u-gallery-1 { height: auto; }
@@ -139,7 +145,7 @@
     }
 
     /* -------------------------------
-       Section 6 Styling 
+       Section 6 Styling (Subscription/Pop-up)
        ------------------------------- */
     .u-section-6 {
       background-image: linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
@@ -165,22 +171,13 @@
       .u-section-6 .u-text-1 { margin-top: 116px; }
       .u-section-6 .u-form-1 { width: 340px; margin-bottom: 58px; }
     }
-
-    /* -------------------------------
-       Optional Global Fixes
-       ------------------------------- */
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
   </style>
 </head>
 <body data-home-page="https://website6043513-1.nicepage.io/China-Jade-Menu-and-Events.html?version=3e17fc39-31ee-72a9-2c2a-f8ea42dc5644"
       data-home-page-title="China Jade Menu and Events" data-path-to-root="./" data-include-products="false"
       class="u-body u-xl-mode" data-lang="en">
 
-  <!-- Section 1 -->
+  <!-- Section 1: Menu Gallery -->
   <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-3723">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h3 class="u-align-center u-custom-font u-font-playfair-display u-text u-text-1" spellcheck="false">
@@ -189,7 +186,8 @@
       <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-no-transition u-show-text-always u-gallery-1">
         <div class="u-gallery-inner u-gallery-inner-1">
           <!-- Gallery Item 1 -->
-          <div class="u-effect-hover-zoom u-file-link u-gallery-item" data-href="files/chinajade6_authenticChinese_sechuanAppetizers_cantoneseAppetizers_soup.pdf">
+          <div class="u-effect-hover-zoom u-file-link u-gallery-item"
+               data-href="files/chinajade6_authenticChinese_sechuanAppetizers_cantoneseAppetizers_soup.pdf">
             <div class="u-back-slide" data-image-width="634" data-image-height="424">
               <img class="u-back-image u-expanded u-back-image-2" src="images/menu-guifei-compressed.jpg" alt="Authentic Chinese Appetizers">
             </div>
@@ -202,25 +200,113 @@
               </p>
             </div>
           </div>
-          <!-- Repeat additional gallery items as needed -->
+          <!-- Gallery Item 2 -->
+          <div class="u-effect-hover-zoom u-file-link u-gallery-item"
+               data-href="files/chinajade_americanChinese_merged.pdf">
+            <div class="u-back-slide" data-image-width="1085" data-image-height="567">
+              <img class="u-back-image u-expanded u-back-image-1" src="images/menu-walnutshrimp-compressed.jpg" alt="American Chinese">
+            </div>
+            <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-1">
+              <h6 class="u-align-center u-gallery-heading" style="width: 321px; margin: 0 auto; background-image: none; font-weight: 700;">
+                American Chinese
+              </h6>
+              <p class="u-align-center u-gallery-text" style="width: 321px; margin: 0 auto; margin-top: 0; font-weight: 700;">
+                美式中餐
+              </p>
+            </div>
+          </div>
+          <!-- Gallery Item 3 -->
+          <div class="u-effect-hover-zoom u-file-link u-gallery-item"
+               data-href="files/chinajade_authenticChinese_merged.pdf">
+            <div class="u-back-slide" data-image-width="1620" data-image-height="1080">
+              <img class="u-back-image u-expanded" src="images/menu-surou-compressed.jpg" alt="Authentic Chinese Sichuan & Cantonese Entrées">
+            </div>
+            <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-3">
+              <h6 class="u-align-center u-gallery-heading" style="width: 321px; margin: 0 auto; background-image: none; font-weight: 700;">
+                Authentic Chinese Sichuan &amp; Cantonese Entrées
+              </h6>
+              <p class="u-align-center u-gallery-text" style="width: 321px; margin: 0 auto; margin-top: 0; font-weight: 700;">
+                正宗川菜和粵菜
+              </p>
+            </div>
+          </div>
+          <!-- Gallery Item 4 -->
+          <div class="u-effect-hover-zoom u-file-link u-gallery-item"
+               data-href="files/chinajade12_lunchSpecial.pdf">
+            <div class="u-back-slide" data-image-width="1393" data-image-height="735">
+              <img class="u-back-image u-expanded" src="images/menu-lunchspecial-compressed.jpg" alt="Lunch Specials">
+            </div>
+            <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-4">
+              <h6 class="u-align-center u-gallery-heading" style="width: 321px; margin: 0 auto; background-image: none; font-weight: 700;">
+                Lunch Specials
+              </h6>
+              <p class="u-align-center u-gallery-text" style="width: 321px; margin: 0 auto; margin-top: 0; font-weight: 700;">
+                午餐套裝
+              </p>
+            </div>
+          </div>
+          <!-- Gallery Item 5 -->
+          <div class="u-effect-hover-zoom u-file-link u-gallery-item"
+               data-href="files/chinajade11_authenticChinese_szechuanLunch.pdf">
+            <div class="u-back-slide" data-image-width="2852" data-image-height="1956">
+              <img class="u-back-image u-expanded" src="images/menu-kungpao-compressed.jpg" alt="Authentic Sichuan Lunch Combos">
+            </div>
+            <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-5">
+              <h6 class="u-align-center u-gallery-heading" style="width: 321px; margin: 0 auto; background-image: none; font-weight: 700;">
+                Authentic Sichuan Lunch Combos
+              </h6>
+              <p class="u-align-center u-gallery-text" style="width: 321px; margin: 0 auto; margin-top: 0; font-weight: 700;">
+                正宗川菜午餐套裝
+              </p>
+            </div>
+          </div>
+          <!-- Gallery Item 6 -->
+          <div class="u-effect-hover-zoom u-file-link u-gallery-item" data-href="files/chinajade13_.pdf">
+            <div class="u-back-slide" data-image-width="3024" data-image-height="4032">
+              <img class="u-back-image u-expanded" src="images/menu-niuwa-compressed.jpg" alt="Authentic Chinese Family Combos">
+            </div>
+            <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-6">
+              <h6 class="u-align-center u-gallery-heading" style="width: 321px; margin: 0 auto; background-image: none; font-weight: 700;">
+                Authentic Chinese Family Combos
+              </h6>
+              <p class="u-align-center u-gallery-text" style="width: 321px; margin: 0 auto; margin-top: 0; font-weight: 700;">
+                正宗家庭特價和菜
+              </p>
+            </div>
+          </div>
+          <!-- Gallery Item 7 -->
+          <div class="u-effect-hover-zoom u-file-link u-gallery-item" data-href="files/drinks_menu.pdf">
+            <div class="u-back-slide" data-image-width="1085" data-image-height="567">
+              <img class="u-back-image u-expanded u-back-image-1" src="images/coffee_tea.jpg" alt="Tea, Coffee & Alcoholic Beverages">
+            </div>
+            <div class="u-container-align-center u-over-slide u-shading u-valign-middle u-over-slide-1">
+              <h6 class="u-align-center u-gallery-heading" style="width: 100%; margin: 0 auto; background-image: none; font-weight: 700;">
+                Tea, Coffee & Alcoholic Beverages
+              </h6>
+              <p class="u-align-center u-gallery-text" style="width: 321px; margin: 0 auto; margin-top: 0; font-weight: 700;">
+                饮料和酒
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 2 -->
+  <!-- Section 2: Menu Items / Buttons -->
   <section class="u-align-center u-clearfix u-white u-section-2" id="carousel_4095">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
-          <!-- Repeater Item 1 -->
-          <div class="custom-expanded u-container-style u-custom-item u-list-item u-palette-1-base u-radius u-repeater-item u-shape-round u-list-item-1">
+          <!-- Menu Item 1 -->
+          <div class="custom-expanded u-container-style u-custom-item u-list-item u-palette-1-base u-radius u-repeater-item u-shape-round u-list-item-1"
+               data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
             <div class="u-container-layout u-similar-container u-container-layout-1">
               <h3 class="u-align-left u-custom-item u-heading-font u-text u-text-1" spellcheck="false">
                 LONGCAN CHEN
               </h3>
               <span class="u-custom-item u-icon u-icon-circle u-text-palette-1-light-2 u-icon-1">
-                <!-- SVG icon content -->
+                <!-- SVG icon content (if any) -->
               </span>
               <h4 class="u-align-left u-custom-item u-heading-font u-text u-text-custom-color-2 u-text-2" spellcheck="false">
                 OLYMPIC GOLD&nbsp;METALIST
@@ -230,13 +316,84 @@
               </p>
             </div>
           </div>
-          <!-- Repeat additional repeater items as needed -->
+          <!-- Menu Item 2 -->
+          <div class="custom-expanded u-container-style u-custom-item u-list-item u-palette-1-base u-radius u-repeater-item u-shape-round u-list-item-2"
+               data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+            <div class="u-container-layout u-similar-container u-container-layout-2">
+              <h3 class="u-align-left u-custom-item u-heading-font u-text u-text-4" spellcheck="false">
+                TONGSHENG HUANG
+              </h3>
+              <span class="u-custom-item u-icon u-icon-circle u-text-palette-1-light-2 u-icon-2">
+                <!-- SVG icon content (if any) -->
+              </span>
+              <h4 class="u-align-left u-custom-item u-heading-font u-text u-text-custom-color-2 u-text-5" spellcheck="true">
+                PINGPANG GOLD&nbsp;METALIST
+              </h4>
+              <p class="u-custom-item u-text u-text-6" spellcheck="false">
+                Favorites are House Special Guifei Chicken, Chengdu Kongpao Chicken, Garlic Flavored Pork Chops, Scallion Pancakes. Very friendly manager
+              </p>
+            </div>
+          </div>
+          <!-- Menu Item 3 -->
+          <div class="custom-expanded u-container-style u-custom-item u-list-item u-palette-1-base u-radius u-repeater-item u-shape-round u-list-item-3"
+               data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+            <div class="u-container-layout u-similar-container u-container-layout-3">
+              <h3 class="u-align-left u-custom-item u-heading-font u-text u-text-7" spellcheck="false">
+                ARUNA MILLER
+              </h3>
+              <span class="u-custom-item u-icon u-icon-circle u-text-palette-1-light-2 u-icon-3">
+                <!-- SVG icon content (if any) -->
+              </span>
+              <h4 class="u-align-left u-custom-item u-heading-font u-text u-text-custom-color-2 u-text-8" spellcheck="false">
+                MARYLAND LIEUTENANT GOVERNOR
+              </h4>
+              <p class="u-custom-item u-text u-text-9" spellcheck="false">
+                Family customized vegetarian dishes to be extra spicy. Egg Plant in Garlic Sauce, Crispy Tofu in Garlic Sauce, Kongpao Tofu, Fried Tofu with Vegetables. Crispy Tofu with Vegetables in Black Bean Sauce. Vegetable Fried Rice, ​Vegetable Lo Mein. All delicious!
+              </p>
+            </div>
+          </div>
+          <!-- Menu Item 4 -->
+          <div class="custom-expanded u-container-style u-custom-item u-list-item u-palette-1-base u-radius u-repeater-item u-shape-round u-list-item-4"
+               data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+            <div class="u-container-layout u-similar-container u-container-layout-4">
+              <h3 class="u-align-left u-custom-item u-heading-font u-text u-text-10" spellcheck="false">
+                JIA LIU
+              </h3>
+              <span class="u-custom-item u-icon u-icon-circle u-text-palette-1-light-2 u-icon-4">
+                <!-- SVG icon content (if any) -->
+              </span>
+              <h4 class="u-align-left u-custom-item u-heading-font u-text u-text-custom-color-2 u-text-11" spellcheck="false">
+                FAMOUS ACTRESS
+              </h4>
+              <p class="u-custom-item u-text u-text-12" spellcheck="false">
+                Favorites are Steak in Black Pepper Sauce, Hot &amp; Sour Intestine Yam Noodles, Garlic Flavor Crispy Fish Filet, Fish Filet with Pickled Vegetables and Yam Noodle Soup
+              </p>
+            </div>
+          </div>
+          <!-- Menu Item 5 -->
+          <div class="custom-expanded u-container-style u-custom-item u-list-item u-palette-1-base u-radius u-repeater-item u-shape-round u-list-item-5"
+               data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+            <div class="u-container-layout u-similar-container u-container-layout-5">
+              <h3 class="u-align-left u-custom-item u-heading-font u-text u-text-13" spellcheck="false">
+                ZUER SONG
+              </h3>
+              <span class="u-custom-item u-icon u-icon-circle u-text-palette-1-light-2 u-icon-5">
+                <!-- SVG icon content (if any) -->
+              </span>
+              <h4 class="u-align-left u-custom-item u-heading-font u-text u-text-custom-color-2 u-text-14" spellcheck="false">
+                FAMOUS ACTRESS
+              </h4>
+              <p class="u-custom-item u-text u-text-15" spellcheck="false">
+                Wonderful authentic Chinese Family Combo
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 3 -->
+  <!-- Section 3: China Jade Rockville Information -->
   <section class="u-clearfix u-grey-5 u-section-3" id="sec-f25b">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
@@ -244,8 +401,7 @@
           <div class="u-layout-col">
             <div class="u-size-30">
               <div class="u-layout-row">
-                <div class="u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-1"
-                     data-image-width="1920" data-image-height="1080">
+                <div class="u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-1" data-image-width="1920" data-image-height="1080">
                   <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
                 </div>
                 <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
@@ -268,13 +424,13 @@
     </div>
   </section>
 
-  <!-- Section 4 -->
+  <!-- Section 4: Community Love Testimonials (Repeater) -->
   <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-md u-container-align-center-xl u-grey-10 u-section-4" id="sec-14a2">
     <div class="u-clearfix u-sheet u-valign-bottom-xs u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-sheet-1">
       <h3 class="u-align-center u-text u-text-default u-text-1">COMMUNITY LOVE</h3>
       <div class="u-expanded-width-xs u-layout-horizontal u-list u-list-1">
         <div class="u-repeater u-repeater-1">
-          <!-- Repeater item example -->
+          <!-- Testimonial 1 -->
           <div class="u-container-style u-list-item u-repeater-item">
             <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-1">
               <img class="u-expanded-width u-image u-image-default u-image-1" src="images/govandfriends.jpg" alt="" data-image-width="947" data-image-height="1537">
@@ -283,31 +439,138 @@
               </p>
             </div>
           </div>
-          <!-- Repeat additional repeater items as needed -->
+          <!-- Testimonial 2 -->
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
+              <img class="u-expanded-width u-image u-image-default u-image-2" src="images/370235627_281473544397298_5884647104470446971_n.jpg" alt="" data-image-width="1920" data-image-height="1440">
+              <p class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-3">
+                Advocate for our community with Board of Education Julie Yang
+              </p>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-3">
+              <img class="u-expanded-width u-image u-image-default u-image-3" src="images/hospital.jpg" alt="" data-image-width="1256" data-image-height="621">
+              <p class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-4">
+                Thank ​you health angels in DC/Maryland/Virginia and more
+              </p>
+            </div>
+          </div>
+          <!-- Testimonial 4 -->
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-4">
+              <img class="u-expanded-width u-image u-image-default u-image-4" src="images/community-carousel-cake.jpg" alt="" data-image-width="1440" data-image-height="1920">
+              <p class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-5">
+                Support local family restaurants and small businesses
+              </p>
+            </div>
+          </div>
         </div>
-        <!-- Gallery navigation omitted for brevity -->
+        <!-- Navigation arrows for the testimonial list (if needed) -->
+        <a class="u-absolute-vcenter-lg u-absolute-vcenter-md u-absolute-vcenter-sm u-absolute-vcenter-xl u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1" href="#" role="button">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 451.847 451.847">
+              <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"/>
+            </svg>
+          </span>
+          <span class="sr-only">
+            <svg viewBox="0 0 451.847 451.847">
+              <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"/>
+            </svg>
+          </span>
+        </a>
+        <a class="u-absolute-vcenter-xl u-gallery-nav u-gallery-nav-next u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-2" href="#" role="button">
+          <span aria-hidden="true">
+            <svg viewBox="0 0 451.846 451.847">
+              <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
+            </svg>
+          </span>
+          <span class="sr-only">
+            <svg viewBox="0 0 451.846 451.847">
+              <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
+                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"/>
+            </svg>
+          </span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Section 5 -->
+  <!-- Section 5: Gallery Carousel (Testimonials or Other Images) -->
   <section class="u-align-center u-clearfix u-grey-15 u-section-5" id="carousel_7183">
     <div class="u-clearfix u-sheet u-sheet-1">
       <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-always u-gallery-1" id="carousel-d46e">
         <div class="u-gallery-inner u-gallery-inner-1" role="listbox">
+          <!-- Gallery Item 1 -->
           <div class="u-gallery-item u-gallery-item-1">
             <div class="u-back-slide" data-image-width="540" data-image-height="574">
               <img class="u-back-image u-expanded u-back-image-1" src="images/371513137_1062414234957153_4867551242381243161_n.jpg">
             </div>
             <div class="u-container-align-center u-over-slide u-valign-middle u-over-slide-1"></div>
           </div>
-          <!-- Repeat additional gallery items as needed -->
+          <!-- Gallery Item 2 -->
+          <div class="u-gallery-item u-gallery-item-2">
+            <div class="u-back-slide" data-image-width="3468" data-image-height="2701">
+              <img class="u-back-image u-expanded u-back-image-2" src="images/385526215.jpg" alt="">
+            </div>
+            <div class="u-container-align-center u-over-slide u-valign-middle u-over-slide-2"></div>
+          </div>
+          <!-- Gallery Item 3 -->
+          <div class="u-gallery-item u-gallery-item-3">
+            <div class="u-back-slide" data-image-width="1920" data-image-height="1837">
+              <img class="u-back-image u-expanded" src="images/371336057_307545022078080_6570710422281771036_n.jpg">
+            </div>
+            <div class="u-container-align-center u-over-slide u-valign-middle u-over-slide-3"></div>
+          </div>
+          <!-- Gallery Item 4 -->
+          <div class="u-gallery-item u-gallery-item-4">
+            <div class="u-back-slide" data-image-width="1920" data-image-height="1843">
+              <img class="u-back-image u-expanded" src="images/368571340.jpg" alt="">
+            </div>
+            <div class="u-container-align-center u-over-slide u-valign-middle u-over-slide-4"></div>
+          </div>
+          <!-- Gallery Item 5 -->
+          <div class="u-gallery-item u-gallery-item-5">
+            <div class="u-back-slide" data-image-width="1440" data-image-height="1920">
+              <img class="u-back-image u-expanded u-back-image-5" src="images/369041285_663372189266392_7506270409288752490_n.jpg" alt="">
+            </div>
+            <div class="u-container-align-center u-over-slide u-valign-middle u-over-slide-5"></div>
+          </div>
+          <!-- Gallery Item 6 -->
+          <div class="u-gallery-item u-gallery-item-6">
+            <div class="u-back-slide" data-image-width="3333" data-image-height="2885">
+              <img class="u-back-image u-expanded u-back-image-6" src="images/huafunews.jpg">
+            </div>
+            <div class="u-container-align-center u-over-slide u-valign-middle u-over-slide-6"></div>
+          </div>
+          <!-- Gallery Item 7 -->
+          <div class="u-gallery-item u-gallery-item-7">
+            <div class="u-back-slide" data-image-width="1920" data-image-height="1440">
+              <img class="u-back-image u-expanded u-back-image-7" src="images/386858926_329926033006942_1979671495698372026_n.jpg">
+            </div>
+            <div class="u-container-align-center u-over-slide u-valign-middle u-over-slide-7"></div>
+          </div>
+          <!-- Gallery Item 8 -->
+          <div class="u-gallery-item u-gallery-item-8">
+            <div class="u-back-slide" data-image-width="1920" data-image-height="1440">
+              <img class="u-back-image u-expanded u-back-image-8" src="images/community-school.jpg">
+            </div>
+            <div class="u-container-align-center u-over-slide u-valign-middle u-over-slide-8"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 6 -->
+  <!-- Section 6: Subscribe / Pop-up Tastes -->
   <section class="u-align-center u-clearfix u-image u-shading u-section-6" data-image-width="671" data-image-height="440" id="sec-cc63">
     <div class="u-clearfix u-sheet u-sheet-1">
       <h3 class="u-text u-text-default u-text-1" spellcheck="false">
@@ -356,7 +619,5 @@
         class="u-back-to-top u-file-icon u-icon u-opacity u-opacity-40 u-text-black" data-href="#">
     <img src="images/1160fc06.png" alt="">
   </span>
-
 </body>
 </html>
-
