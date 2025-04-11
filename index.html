@@ -148,8 +148,7 @@
        Section 6 Styling (Subscription/Pop-up)
        ------------------------------- */
     .u-section-6 {
-      background-image: linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                        url('images/chinajade_reddoor-1.jpeg');
+      background-image: linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('images/chinajade_reddoor-1.jpeg');
       background-position: 50% 50%;
     }
     .u-section-6 .u-sheet-1 { min-height: 800px; }
@@ -170,6 +169,18 @@
       .u-section-6 .u-sheet-1 { min-height: 544px; }
       .u-section-6 .u-text-1 { margin-top: 116px; }
       .u-section-6 .u-form-1 { width: 340px; margin-bottom: 58px; }
+    }
+
+    /* ===========================
+       FORCE IMAGE RESPONSIVENESS
+       - ensures the "huafunews.jpg" 
+         does not exceed mobile width
+       =========================== */
+    .u-section-6 img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -576,7 +587,9 @@
       <h3 class="u-text u-text-default u-text-1" spellcheck="false">
         CHECK BACK FOR LIMITED TIME POP-UP TASTES
       </h3>
+      <!-- The image below is now forced to max-width:100% -->
       <img src="images/huafunews.jpg" alt="">
+      
       <h6 class="u-text u-text-default u-text-2" spellcheck="false">
         SUBSCRIBE TO NOT MISS OUT ON promo AND REWARDS
       </h6>
