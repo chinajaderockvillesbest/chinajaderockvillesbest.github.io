@@ -10950,6 +10950,14 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     line-height: 1;
 }
 
+/* on mobile, force each card to fill ~90% of viewport */
+@media (max-width: 575.98px) {
+    #testimonialTrack .testimonial-card {
+        flex: 0 0 90%;
+        max-width: 90%;
+    }
+}
+
 /* position them just inside the container edge */
 #prevBtn { left: 1rem; }
 #nextBtn { right: 1rem; }

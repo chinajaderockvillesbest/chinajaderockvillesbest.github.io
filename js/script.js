@@ -13,28 +13,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.getElementById('testimonialCarousel');
-    const cards    = carousel.querySelectorAll('.testimonial-card');
-    let idx = 0;
+    const track = document.getElementById('testimonialTrack');
+    if (!track) return;
+    const cards = Array.from(track.children);
+    let current = 0;
+    let timer;
 
-    function step(i) {
-        const w = cards[0].getBoundingClientRect().width + 16; // card + gutter
-        carousel.scrollTo({ left: i * w, behavior: 'smooth' });
+    function goNext() {
+        current = (current + 1) % cards.length;
+        cards[current].scrollIntoView({ behavior: 'smooth', inline: 'start' });
     }
 
-    let timer = setInterval(() => {
-        idx = (idx + 1) % cards.length;
-        step(idx);
-    }, 5000);
+    function startAuto() {
+        // only on mobile/smaller than md
+        if (window.innerWidth < 768) {
+            timer = setInterval(goNext, 4000);
+        }
+    }
+    function stopAuto() {
+        clearInterval(timer);
+    }
 
-    document.getElementById('prevBtn').onclick = () => {
-        clearInterval(timer);
-        idx = Math.max(0, idx - 1);
-        step(idx);
-    };
-    document.getElementById('nextBtn').onclick = () => {
-        clearInterval(timer);
-        idx = Math.min(cards.length - 1, idx + 1);
-        step(idx);
-    };
+    // kick things off if we start small
+    startAuto();
+
+    // restart/stop if the user resizes across the 768px threshold
+    let lastWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+        const w = window.innerWidth;
+        // only toggle when crossing the 768px boundary
+        if ((lastWidth >= 768 && w < 768) || (lastWidth < 768 && w >= 768)) {
+            stopAuto();
+            startAuto();
+        }
+        lastWidth = w;
+    });
 });
