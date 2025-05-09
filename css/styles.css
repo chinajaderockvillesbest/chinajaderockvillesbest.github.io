@@ -10898,3 +10898,58 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     background: url('../images/hero_news.png') center/cover no-repeat;
     min-height: 20vh;
 }
+
+/* ===============================
+   Testimonials carousel tweaks
+   =============================== */
+
+/* completely hide native scrollbar */
+#testimonialCarousel {
+    -ms-overflow-style: none;    /* IE11 */
+    scrollbar-width: none;       /* Firefox */
+}
+#testimonialCarousel::-webkit-scrollbar {
+    display: none;               /* Chrome/Safari */
+}
+
+/* flex container as snap-scroll */
+#testimonialCarousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* ensure arrows sit outside card area */
+    padding: 0 4rem;
+}
+
+/* each card snaps in place */
+.testimonial-card {
+    scroll-snap-align: start;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+/* lg+ => six across (16.6667%) */
+@media (min-width: 992px) {
+    .testimonial-card {
+        flex: 0 0 16.6667%;
+        max-width: 16.6667%;
+    }
+}
+
+/* Prev/Next buttons */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* position them just inside the container edge */
+#prevBtn { left: 1rem; }
+#nextBtn { right: 1rem; }
