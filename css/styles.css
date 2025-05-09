@@ -10863,3 +10863,38 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
         margin-left: -15rem;
     }
 }
+
+/* reuse your existing hero styling, but apply to both sections */
+#hero-1, #hero-2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+/* the dark overlay */
+#hero-1::before,
+#hero-2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 0;
+}
+/* make sure content sits above the overlay */
+#hero-1 .hero-content,
+#hero-2 .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* now give each one its own background */
+#hero-1 {
+    background: url('../images/hero_awards.jpg') center/cover no-repeat;
+    min-height: 20vh;
+}
+#hero-2 {
+    background: url('../images/hero_news.png') center/cover no-repeat;
+    min-height: 5vh;
+}
