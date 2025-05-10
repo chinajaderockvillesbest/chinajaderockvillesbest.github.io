@@ -10879,7 +10879,6 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.5);
     z-index: 0;
 }
 /* make sure content sits above the overlay */
@@ -10891,73 +10890,111 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 /* now give each one its own background */
 #hero-1 {
-    background: url('../images/hero_awards.jpg') center/cover no-repeat;
+    background: url('../images/hero_cover.png') center/cover no-repeat;
     min-height: 40vh;
 }
 #hero-2 {
-    background: url('../images/hero_news.png') center/cover no-repeat;
-    min-height: 20vh;
+    background: url('../images/hero_awards.png') center/cover no-repeat;
+    min-height: 60vh;
 }
 
-/* ===============================
-   Testimonials carousel tweaks
-   =============================== */
-
-/* completely hide native scrollbar */
-#testimonialCarousel {
-    -ms-overflow-style: none;    /* IE11 */
-    scrollbar-width: none;       /* Firefox */
-}
-#testimonialCarousel::-webkit-scrollbar {
-    display: none;               /* Chrome/Safari */
-}
-
-/* flex container as snap-scroll */
-#testimonialCarousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    /* ensure arrows sit outside card area */
-    padding: 0 4rem;
-}
-
-/* each card snaps in place */
-.testimonial-card {
-    scroll-snap-align: start;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
-/* lg+ => six across (16.6667%) */
-@media (min-width: 992px) {
-    .testimonial-card {
-        flex: 0 0 16.6667%;
-        max-width: 16.6667%;
-    }
-}
-
-/* Prev/Next buttons */
-.carousel-nav-btn {
+/* —— Hero 1: move text below logo —— */
+#hero-1 .hero-logo {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0;
-    font-size: 1.5rem;
-    line-height: 1;
+    top: 40%;            /* pull the logo up a bit */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    z-index: 2;
 }
 
-/* on mobile, force each card to fill ~90% of viewport */
-@media (max-width: 575.98px) {
-    #testimonialTrack .testimonial-card {
-        flex: 0 0 90%;
-        max-width: 90%;
+#hero-1 .hero-text-below-logo {
+    position: absolute;
+    top: 60%;            /* drop the text below the logo */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    text-align: center;
+}
+
+/* —— Hero 2: reposition & transparent boxes —— */
+.hero-text-box {
+    position: absolute;
+    width: 30%;
+    padding: 1rem;
+    background-color: transparent; /* no dark backdrop */
+    color: #fff;
+    z-index: 2;
+    text-align: center;
+}
+
+/* put the left box up in the green margin */
+.hero-box-left {
+    top: 20%;
+    left: 10%;
+    transform: none;
+}
+
+/* put the right box down in the green margin */
+.hero-box-right {
+    bottom: 20%;
+    right: 10%;
+    transform: none;
+}
+
+/* small-screen fallback */
+@media (max-width: 767.98px) {
+    .hero-text-box {
+        width: 80%;
+        left: 50% !important;
+        right: auto !important;
+        bottom: 10% !important;
+        top: auto !important;
+        transform: translateX(-50%);
     }
 }
 
-/* position them just inside the container edge */
-#prevBtn { left: 1rem; }
-#nextBtn { right: 1rem; }
+/* Hide scrollbar but keep scrolling */
+#menuNav {
+    overflow-x: auto;               /* keep horizontal scroll */
+    -ms-overflow-style: none;       /* IE/Edge */
+    scrollbar-width: none;          /* Firefox */
+}
+
+#menuNav::-webkit-scrollbar {
+    display: none;                  /* Chrome, Safari, Opera */
+}
+
+/* 1. Sticky only after scrolling past its normal flow */
+.menu-tracker {
+    position: sticky;
+    top: 0;
+    z-index: 1030;       /* make sure it floats above your content */
+    transition: background-color .3s, padding .3s;
+}
+
+/* optional: if you want it to shrink or shade once it’s fully stuck */
+.menu-tracker.stuck {
+    padding: .25rem 0;
+    background: rgba(255,255,255,0.95);
+}
+
+/* 2. Style links and active state */
+#menuNav {
+    display: flex;
+    flex-wrap: wrap;             /* wrap on small screens */
+    justify-content: center;
+    gap: 0.5rem;
+}
+#menuNav .nav-link {
+    border: 1px solid #28a745;   /* green outline */
+    color: #28a745;
+    border-radius: .375rem;
+    text-decoration: none;
+    transition: background-color .2s, color .2s;
+}
+#menuNav .nav-link.active,
+#menuNav .nav-link:hover {
+    background-color: #28a745;
+    color: #fff;
+}

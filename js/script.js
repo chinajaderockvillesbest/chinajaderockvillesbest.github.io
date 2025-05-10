@@ -13,39 +13,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const track = document.getElementById('testimonialTrack');
-    if (!track) return;
-    const cards = Array.from(track.children);
-    let current = 0;
-    let timer;
+    const navLinks = document.querySelectorAll('#menuNav .nav-link');
+    const sections = Array.from(navLinks)
+        .map(link => document.getElementById(link.getAttribute('href').slice(1)))
+        .filter(sec => sec); // only valid sections
 
-    function goNext() {
-        current = (current + 1) % cards.length;
-        cards[current].scrollIntoView({ behavior: 'smooth', inline: 'start' });
-    }
-
-    function startAuto() {
-        // only on mobile/smaller than md
-        if (window.innerWidth < 768) {
-            timer = setInterval(goNext, 4000);
-        }
-    }
-    function stopAuto() {
-        clearInterval(timer);
-    }
-
-    // kick things off if we start small
-    startAuto();
-
-    // restart/stop if the user resizes across the 768px threshold
-    let lastWidth = window.innerWidth;
-    window.addEventListener('resize', () => {
-        const w = window.innerWidth;
-        // only toggle when crossing the 768px boundary
-        if ((lastWidth >= 768 && w < 768) || (lastWidth < 768 && w >= 768)) {
-            stopAuto();
-            startAuto();
-        }
-        lastWidth = w;
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.id;
+            const link = document.querySelector(`#menuNav .nav-link[href="#${id}"]`);
+            if (entry.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link && link.classList.add('active');
+            }
+        });
+    }, {
+        rootMargin: '0px 0px -50% 0px',  // trigger when section is halfway up
+        threshold: 0
     });
+
+    sections.forEach(sec => observer.observe(sec));
 });
+
+const tracker = document.querySelector('.menu-tracker');
+// insert a “sentinel” div just above the tracker
+const sent = document.createElement('div');
+tracker.parentNode.insertBefore(sent, tracker);
+new IntersectionObserver(
+    ([e]) => tracker.classList.toggle('stuck', e.intersectionRatio < 1),
+    { threshold: [1] }
+).observe(sent);
