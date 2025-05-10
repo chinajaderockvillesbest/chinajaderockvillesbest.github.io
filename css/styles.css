@@ -10865,7 +10865,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 /* reuse your existing hero styling, but apply to both sections */
-#hero-1, #hero-2 {
+#hero-1 {
     position: relative;
     display: flex;
     align-items: center;
@@ -10873,14 +10873,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     color: #fff;
     text-align: center;
 }
-/* the dark overlay */
-#hero-1::before,
-#hero-2::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
+
 /* make sure content sits above the overlay */
 #hero-1 .hero-content,
 #hero-2 .hero-content {
@@ -10890,10 +10883,6 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 /* now give each one its own background */
 #hero-1 {
-    background: url('../images/hero_cover.png') center/cover no-repeat;
-    min-height: 15vh;
-}
-#hero-2 {
     background: url('../images/hero_awards.png') center/cover no-repeat;
     min-height: 60vh;
 }
@@ -10901,9 +10890,9 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 /* —— Hero 1: move text below logo —— */
 #hero-1 .hero-logo {
     position: absolute;
-    top: 30%;            /* pull the logo up a bit */
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 15%;            /* pull the logo up a bit */
+    left: 10%;
+    transform: translate(-40%, -50%);
     max-width: 20%;
     z-index: 2;
 }
