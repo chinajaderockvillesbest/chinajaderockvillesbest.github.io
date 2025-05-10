@@ -10891,7 +10891,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 /* now give each one its own background */
 #hero-1 {
     background: url('../images/hero_cover.png') center/cover no-repeat;
-    min-height: 40vh;
+    min-height: 15vh;
 }
 #hero-2 {
     background: url('../images/hero_awards.png') center/cover no-repeat;
@@ -10901,10 +10901,10 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 /* —— Hero 1: move text below logo —— */
 #hero-1 .hero-logo {
     position: absolute;
-    top: 40%;            /* pull the logo up a bit */
+    top: 30%;            /* pull the logo up a bit */
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 80%;
+    max-width: 20%;
     z-index: 2;
 }
 
