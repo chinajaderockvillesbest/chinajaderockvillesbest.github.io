@@ -10864,72 +10864,48 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     }
 }
 
-/* Hero #1: full‐width, scaled image with logo on the right */
 #hero-1 {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    /* allow the section's height to be driven by the image */
+    overflow: visible;
     display: flex;
     align-items: center;
-    justify-content: flex-end;     /* push logo to the right */
-    background: url('../images/hero_awards.png') center/cover no-repeat;
+    justify-content: center;
 }
 
-#hero-1 img {
-    width: 100%;                    /* fill width */
-    height: auto;                   /* keep aspect ratio */
-    object-fit: contain;            /* no cropping/distortion */
+/* The awards collage fills the full width,
+   and its height adjusts to keep its aspect ratio. */
+#hero-1 .hero-collage {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* no cropping/distortion */
     display: block;
 }
 
-/* Logo styling (optional tweaks) */
-.hero-logo {
-    max-width: 200px;               /* or whatever max size you want */
-    margin-right: 1rem;
-    z-index: 1;
-}
-
-/* make sure content sits above the overlay */
-#hero-1 .hero-content,
-#hero-2 .hero-content {
-    position: relative;
-    z-index: 1;
-}
-
-
-#hero-1 .hero-text-below-logo {
+/* Center-overlayed text */
+#hero-1 .hero-text {
     position: absolute;
-    top: 60%;            /* drop the text below the logo */
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    z-index: 3;
-    text-align: center;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    z-index: 1;
 }
 
-/* —— Hero 2: reposition & transparent boxes —— */
-.hero-text-box {
+/* Logo sits on top, flush-right, vertically centered */
+#hero-1 .hero-logo {
     position: absolute;
-    width: 30%;
-    padding: 1rem;
-    background-color: transparent; /* no dark backdrop */
-    color: #fff;
-    z-index: 2;
-    text-align: center;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 200px;  /* adjust as needed */
+    height: auto;
+    z-index: 1;
 }
-
-/* put the left box up in the green margin */
-.hero-box-left {
-    top: 20%;
-    left: 10%;
-    transform: none;
-}
-
-/* put the right box down in the green margin */
-.hero-box-right {
-    bottom: 20%;
-    right: 10%;
-    transform: none;
-}
-
 /* Hide scrollbar but keep scrolling */
 #menuNav {
     overflow-x: auto;               /* keep horizontal scroll */
