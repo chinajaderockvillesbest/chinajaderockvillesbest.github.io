@@ -10864,48 +10864,70 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     }
 }
 
+/* Hero container */
 #hero-1 {
     position: relative;
     width: 100%;
-    /* allow the section's height to be driven by the image */
-    overflow: visible;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* no fixed height—will size to the image’s natural height */
 }
 
-/* The awards collage fills the full width,
-   and its height adjusts to keep its aspect ratio. */
-#hero-1 .hero-collage {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* no cropping/distortion */
+/* 1) Full-width collage image, never cropped */
+.hero-collage {
     display: block;
+    width: 100%;
+    height: auto;    /* preserve aspect ratio */
 }
 
-/* Center-overlayed text */
-#hero-1 .hero-text {
+/* 2) Common styling for both text overlays */
+.hero-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
+    max-width: 300px;
+    padding: 1rem;
+    background: rgba(0, 100, 68, 0.75); /* semi-transparent green */
     color: white;
-    font-size: 2rem;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-    z-index: 1;
+    border-radius: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    box-sizing: border-box;
 }
 
-/* Logo sits on top, flush-right, vertically centered */
-#hero-1 .hero-logo {
+/* 3) Position left overlay over bottom-left green tile */
+.overlay-left {
+    left: 10%;
+    top: 55%;
+}
+
+/* 4) Position right overlay over top-right green tile */
+.overlay-right {
+    right: 10%;
+    top: 20%;
+}
+
+/* 5) Logo absolutely in the corner, on top of everything */
+.hero-logo {
     position: absolute;
     right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    max-width: 200px;  /* adjust as needed */
+    top: 1rem;
+    max-width: 180px;
     height: auto;
-    z-index: 1;
+    z-index: 2;
 }
+
+/* Responsive stack on narrow screens */
+@media (max-width: 768px) {
+    #hero-1 .overlay-left,
+    #hero-1 .overlay-right {
+        position: static;
+        margin: 1rem auto;
+        max-width: 90%;
+        background: rgba(0,100,68,0.85);
+    }
+    #hero-1 .hero-logo {
+        top: 0.5rem;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
 /* Hide scrollbar but keep scrolling */
 #menuNav {
     overflow-x: auto;               /* keep horizontal scroll */
