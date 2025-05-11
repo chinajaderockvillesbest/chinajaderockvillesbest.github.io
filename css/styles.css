@@ -10864,14 +10864,28 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     }
 }
 
-/* reuse your existing hero styling, but apply to both sections */
+/* Hero #1: full‐width, scaled image with logo on the right */
 #hero-1 {
     position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
+    justify-content: flex-end;     /* push logo to the right */
+    background: url('../images/hero_awards.png') center/cover no-repeat;
+}
+
+#hero-1 img {
+    width: 100%;                    /* fill width */
+    height: auto;                   /* keep aspect ratio */
+    object-fit: contain;            /* no cropping/distortion */
+    display: block;
+}
+
+/* Logo styling (optional tweaks) */
+.hero-logo {
+    max-width: 200px;               /* or whatever max size you want */
+    margin-right: 1rem;
+    z-index: 1;
 }
 
 /* make sure content sits above the overlay */
@@ -10881,21 +10895,6 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     z-index: 1;
 }
 
-/* now give each one its own background */
-#hero-1 {
-    background: url('../images/hero_awards.png') center/cover no-repeat;
-    min-height: 60vh;
-}
-
-/* —— Hero 1: move text below logo —— */
-#hero-1 .hero-logo {
-    position: absolute;
-    top: 15%;            /* pull the logo up a bit */
-    left: 10%;
-    transform: translate(-40%, -50%);
-    max-width: 20%;
-    z-index: 2;
-}
 
 #hero-1 .hero-text-below-logo {
     position: absolute;
@@ -10929,18 +10928,6 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     bottom: 20%;
     right: 10%;
     transform: none;
-}
-
-/* small-screen fallback */
-@media (max-width: 767.98px) {
-    .hero-text-box {
-        width: 80%;
-        left: 50% !important;
-        right: auto !important;
-        bottom: 10% !important;
-        top: auto !important;
-        transform: translateX(-50%);
-    }
 }
 
 /* Hide scrollbar but keep scrolling */
