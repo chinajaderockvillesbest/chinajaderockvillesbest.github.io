@@ -10941,47 +10941,56 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     border: none !important;
 }
 
-/* Hide scrollbar but keep scrolling */
-#menuNav {
-    overflow-x: auto;               /* keep horizontal scroll */
-    -ms-overflow-style: none;       /* IE/Edge */
-    scrollbar-width: none;          /* Firefox */
+/* Bottom fixed nav */
+/* 1. Bottom nav backdrop + blur */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
-#menuNav::-webkit-scrollbar {
-    display: none;                  /* Chrome, Safari, Opera */
-}
-
-/* 1. Sticky only after scrolling past its normal flow */
-.menu-tracker {
-    position: sticky;
-    top: 0;
-    z-index: 1030;       /* make sure it floats above your content */
-    transition: background-color .3s, padding .3s;
-}
-
-/* optional: if you want it to shrink or shade once it’s fully stuck */
-.menu-tracker.stuck {
-    padding: .25rem 0;
-    background: rgba(255,255,255,0.95);
-}
-
-/* 2. Style links and active state */
-#menuNav {
+/* 2. Make the menu a flex row, always expanded */
+.bottom-menu {
     display: flex;
-    flex-wrap: wrap;             /* wrap on small screens */
-    justify-content: center;
-    gap: 0.5rem;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    list-style: none;
 }
-#menuNav .nav-link {
-    border: 1px solid #28a745;   /* green outline */
-    color: #28a745;
-    border-radius: .375rem;
-    text-decoration: none;
-    transition: background-color .2s, color .2s;
+
+/* 3. Center text & allow wrapping */
+.bottom-menu li {
+    flex: 1;
 }
-#menuNav .nav-link.active,
-#menuNav .nav-link:hover {
-    background-color: #28a745;
-    color: #fff;
+
+.bottom-menu li a {
+    display: block;         /* fill the li */
+    width: 100%;
+    text-align: center;     /* center both lines */
+    white-space: normal;    /* wrap long labels */
+    color: #004d33;
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+
+/* 4. Optional hover style */
+.bottom-menu li a:hover {
+    background: rgba(0,100,68,0.1);
+}
+
+/* 5. Two‐column wrap on very narrow screens */
+@media (max-width: 500px) {
+    .bottom-menu {
+        flex-wrap: wrap;
+    }
+    .bottom-menu li {
+        flex: 1 1 50%;        /* two per row */
+        margin-bottom: 0.5rem;
+    }
 }
