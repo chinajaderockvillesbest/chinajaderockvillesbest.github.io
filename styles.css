@@ -10864,82 +10864,106 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     }
 }
 
-/* 1) Layout the two heroes */
-.hero-container {
-    display: flex;
-    flex-direction: column; /* stacked by default */
+/* ============================================
+   Translucent, blurred, fixed navbar (top-nav)
+   ============================================ */
+.overlay-nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(2px);
+    z-index: 1000;                /* sit above everything */
+    box-shadow: none !important;  /* remove any default shadow */
+    border: none !important;
 }
-@media (min-width: 992px) {
-    .hero-container {
-        flex-direction: row;  /* side-by-side on lg+ */
+
+/* On mobile, keep it fixed (override any Bootstrap resets) */
+@media (max-width: 768px) {
+    .overlay-nav {
+        position: fixed !important;
     }
 }
 
-/* 2) Common hero styling */
+#hero-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;              /* no gap so the two images butt right up */
+}
+
+@media (min-width: 992px) {
+    #hero-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
 .hero {
     position: relative;
-    flex: 1;
     overflow: hidden;
 }
 
-/* 3) Hero #1 background via <img> */
 .hero-bg {
     display: block;
     width: 100%;
-    height: auto;    /* preserves aspect ratio, no cropping */
+    height: auto;
 }
 
-/* 5) Overlay panels */
-.overlay {
+.hero-overlay {
     position: absolute;
-    max-width: 300px;
-    padding: 1rem;
-    background: rgba(0, 100, 68, 0.75);
-    color: white;
-    border-radius: 0.5rem;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-}
-
-/* place .overlay-left only on hero-1 */
-#hero-1 .overlay-left {
-    top: 55%;
-    left: 10%;
-}
-
-/* place .overlay-right only on hero-2 */
-#hero-2 .overlay-right {
-    top: 20%;
-    right: 10%;
-}
-
-/* 6) Mobile tweaks: center overlays and stack */
-@media (max-width: 991px) {
-    .overlay {
-        position: static;
-        margin: 1rem auto;
-        max-width: 90%;
-    }
-    #hero-2 {
-        aspect-ratio: auto;
-        height: auto;
-        padding-top: 0;
-    }
-}
-
-.overlay-nav {
-    position: fixed;
-    top: 0;
+    top: 1rem;
     left: 0;
-    width: 100%;
-    z-index: 10;
-    background-color: rgba(255,255,255,0.4) !important;
-    backdrop-filter: blur(3px);
+    padding: 1rem;
+    background: rgba(25, 135, 84, 0.85);
+    color: #fff;
+    border-radius: 0.5rem;
+    width: 4ch;                 /* only wide enough for about 4 characters */
+    height: fit-content;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    cursor: pointer;
 }
 
-.overlay-nav .navbar {
-    box-shadow: none !important;
-    border: none !important;
+.hero:hover .hero-overlay,
+.hero-overlay:hover {
+    width: 90%;                 /* expand to reveal the full text */
 }
+
+.hero-overlay p {
+    opacity: 0;
+    transition: opacity 0.3s ease 0.2s;
+}
+
+.hero:hover .hero-overlay p,
+.hero-overlay:hover p {
+    opacity: 1;
+}
+
+/* 2) Force bg image to fill width, auto-height */
+.hero-bg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 3) Common styling for the copy boxes */
+.hero-copy {
+    position: absolute;
+    left: 20%;
+    transform: translateX(-20%);
+    max-width: 90%;
+    background: rgba(25, 135, 84, 0.7);  /* semi-transparent green */
+    color: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    line-height: 1.4;
+}
+
+/* 4) Lift both boxes up to ~20% from the top of their images */
+.copy-1 { top: 20%; }
+.copy-2 { top: 20%; }
 
 /* Bottom fixed nav */
 /* 1. Bottom nav backdrop + blur */
@@ -10950,7 +10974,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     right: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
     z-index: 1000;
 }
