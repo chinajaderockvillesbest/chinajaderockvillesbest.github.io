@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.querySelector('.copy-2').classList.add('expanded');
-    }, 3000); // delay in ms
+    }, 2000); // delay in ms
 
     // wire up each close button
     document.querySelectorAll('.overlay-close').forEach(btn => {
