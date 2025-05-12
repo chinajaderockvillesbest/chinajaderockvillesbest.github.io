@@ -1,3 +1,17 @@
+// 1) disable browser's built-in scroll restoration
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+// 2) on every load/pageshow, jump to top
+window.addEventListener('DOMContentLoaded', () => {
+    window.scrollTo(0, 0);
+});
+// (pageshow handles bfcache restores too)
+window.addEventListener('pageshow', (e) => {
+    if (e.persisted) window.scrollTo(0, 0);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     const collapseEl = document.getElementById('navbarSupportedContent');
     if (!collapseEl) return;
