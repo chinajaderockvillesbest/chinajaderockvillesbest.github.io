@@ -11010,25 +11010,46 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     word-break: keep-all;
 }
 
-/* remove any gutter/padding around the mosaic */
 #community-mosaic {
-    padding: 0;
-    margin: 0;
+    padding: 0.5rem;
 }
 
-/* make sure cards touch each other exactly */
-#community-mosaic .row {
-    margin: 0;
-}
-#community-mosaic .row > [class*="col-"] {
-    padding: 0;
+/* make each mosaic tile wrapper relative for its caption overlay */
+#community-mosaic .mosaic-item {
+    position: relative;
+    overflow: hidden;
 }
 
-/* card images fill their tiles */
+/* the caption bar, hidden below the bottom by default */
+#community-mosaic .mosaic-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    padding: 0.75rem;
+    color: #ffffff;
+    background-color: rgba(25,135,84,0.75);     /* translucent green */
+    backdrop-filter: blur(3px);                  /* blurred behind text */
+    text-align: center;
+    transition: bottom 0.3s ease-in-out;
+}
+
+/* on hover, slide it up into view */
+#community-mosaic .mosaic-item:hover .mosaic-caption {
+    bottom: 0;
+}
+
+/* ensure gallery images fill their cards without gaps */
 #community-mosaic .card-img-top {
     display: block;
     width: 100%;
     height: auto;
+}
+
+/* you can tweak text-size, line-height as needed */
+#community-mosaic .mosaic-caption {
+    font-size: 1rem;
+    line-height: 1.3;
 }
 
 /* Bottom fixed nav */
