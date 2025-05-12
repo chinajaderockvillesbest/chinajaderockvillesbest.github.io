@@ -10975,6 +10975,62 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     background: rgba(0,0,0,0.5);
 }
 
+/* Container for all four heroes */
+#menu-heroes {
+    margin-top: 4rem; /* space above */
+}
+
+/* shared styles for each hero */
+.menu-hero {
+    /* instead of 0.5rem top/bottom, use more */
+    padding: 2rem 1rem;
+    /* optional: ensure a hard floor on height */
+    min-height: 180px;
+    display: flex;
+    align-items: center;    /* vertically center the <h3> */
+    justify-content: center;/* horizontally center the <h3> */
+}
+
+/* Background images for each section */
+.hero-authentic {
+    background-image: url('images/hero_authentic.png');
+}
+.hero-specials {
+    background-image: url('images/hero_specials_combos.png');
+}
+.hero-american {
+    background-image: url('images/hero_american.png');
+}
+.hero-beverages {
+    background-image: url('images/hero_beverages_bar.png');
+}
+
+/* Optional: ensure the two-liner never wraps to three lines on small screens */
+.menu-hero h3 {
+    word-break: keep-all;
+}
+
+/* remove any gutter/padding around the mosaic */
+#community-mosaic {
+    padding: 0;
+    margin: 0;
+}
+
+/* make sure cards touch each other exactly */
+#community-mosaic .row {
+    margin: 0;
+}
+#community-mosaic .row > [class*="col-"] {
+    padding: 0;
+}
+
+/* card images fill their tiles */
+#community-mosaic .card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* Bottom fixed nav */
 /* 1. Bottom nav backdrop + blur */
 .bottom-nav {
