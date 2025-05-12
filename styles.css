@@ -7047,11 +7047,11 @@ textarea.form-control-lg {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
-.shadow-sm {
+.shadow {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow-sm {
+.shadow {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
@@ -10991,7 +10991,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 /* shared styles for each hero */
 .menu-hero {
     /* instead of 0.5rem top/bottom, use more */
-    padding: 2rem 0;
+    padding: 0;
+    margin: 0 0 1rem;
     /* optional: ensure a hard floor on height */
     min-height: 180px;
     display: flex;
@@ -10999,11 +11000,13 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     justify-content: center;/* horizontally center the <h3> */
 }
 
-/* give each menu‐section the same top/bottom gap as its mx-1 side gaps */
+/* Ensure menu‐section cards always have the same shadow & vertical gap */
 .menu-section {
-    margin: 1rem 0;
+    margin-top: 1rem;      /* same as my-3 (1rem) */
+    margin-bottom: 1rem;   /* same as my-3 */
+    /* if you ever override with utility classes, this re-enforces it */
+    box-shadow: var(--bs-card-box-shadow) !important;
 }
-
 
 /* Background images for each section */
 .hero-authentic {
