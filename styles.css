@@ -10888,82 +10888,92 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 #hero-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;              /* no gap so the two images butt right up */
+    display: flex;
+    flex-direction: column;
+    margin: 0; padding: 0;
 }
-
 @media (min-width: 992px) {
-    #hero-wrapper {
-        grid-template-columns: 1fr 1fr;
-    }
+    #hero-wrapper { flex-direction: row; }
+    .hero { width: 50%; }
 }
 
+/* Hero pane & background */
 .hero {
     position: relative;
     overflow: hidden;
 }
-
 .hero-bg {
-    display: block;
     width: 100%;
     height: auto;
+    display: block;
+    margin: 0;
 }
 
+/* Sliding overlays */
 .hero-overlay {
     position: absolute;
-    top: 1rem;
-    left: 0;
-    padding: 1rem;
-    background: rgba(25, 135, 84, 0.85);
+    top: 20%;
+    width: 80%;
+    max-width: 500px;
+    background: rgba(25,135,84,0.8);
     color: #fff;
-    border-radius: 0.5rem;
-    width: 4ch;                 /* only wide enough for about 4 characters */
-    height: fit-content;
-    overflow: hidden;
-    transition: width 0.3s ease;
-    cursor: pointer;
-}
-
-.hero:hover .hero-overlay,
-.hero-overlay:hover {
-    width: 90%;                 /* expand to reveal the full text */
-}
-
-.hero-overlay p {
-    opacity: 0;
-    transition: opacity 0.3s ease 0.2s;
-}
-
-.hero:hover .hero-overlay p,
-.hero-overlay:hover p {
-    opacity: 1;
-}
-
-/* 2) Force bg image to fill width, auto-height */
-.hero-bg {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* 3) Common styling for the copy boxes */
-.hero-copy {
-    position: absolute;
-    left: 20%;
-    transform: translateX(-20%);
-    max-width: 90%;
-    background: rgba(25, 135, 84, 0.7);  /* semi-transparent green */
-    color: #fff;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.6s ease;
+    z-index: 2;
     line-height: 1.4;
 }
 
-/* 4) Lift both boxes up to ~20% from the top of their images */
-.copy-1 { top: 20%; }
-.copy-2 { top: 20%; }
+/* copy-1 slides in from left */
+.copy-1 {
+    left: 10%;
+    transform: translateX(-110%);
+}
+.copy-1.expanded {
+    transform: translateX(0);
+}
+
+/* copy-2 slides in from right */
+.copy-2 {
+    right: 10%;
+    transform: translateX(110%);
+}
+.copy-2.expanded {
+    transform: translateX(0);
+}
+
+/* remove the corner positioning... */
+.overlay-close {
+    position: absolute;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    color: #fff;
+    font-size: 1.6rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+}
+/* slide-in from left, so arrow on right edge of that panel */
+.copy-1 .overlay-close {
+    right: -1.25rem;
+}
+/* slide-in from right, arrow on left edge */
+.copy-2 .overlay-close {
+    left: -1.25rem;
+}
+
+/* optional hover feedback */
+.overlay-close:hover {
+    background: rgba(0,0,0,0.5);
+}
 
 /* Bottom fixed nav */
 /* 1. Bottom nav backdrop + blur */

@@ -11,3 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
             el.addEventListener('click', () => navCollapse.hide());
         });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.querySelector('.copy-1').classList.add('expanded');
+    }, 1000); // delay in ms
+
+    // wire up each close button
+    document.querySelectorAll('.overlay-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement.classList.remove('expanded');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.querySelector('.copy-2').classList.add('expanded');
+    }, 3000); // delay in ms
+
+    // wire up each close button
+    document.querySelectorAll('.overlay-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement.classList.remove('expanded');
+        });
+    });
+});
