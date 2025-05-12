@@ -7051,7 +7051,7 @@ textarea.form-control-lg {
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow-lg {
+.shadow-sm {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
@@ -10991,13 +10991,19 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 /* shared styles for each hero */
 .menu-hero {
     /* instead of 0.5rem top/bottom, use more */
-    padding: 2rem 1rem;
+    padding: 2rem 0;
     /* optional: ensure a hard floor on height */
     min-height: 180px;
     display: flex;
     align-items: center;    /* vertically center the <h3> */
     justify-content: center;/* horizontally center the <h3> */
 }
+
+/* give each menu‐section the same top/bottom gap as its mx-1 side gaps */
+.menu-section {
+    margin: 1rem 0;
+}
+
 
 /* Background images for each section */
 .hero-authentic {
