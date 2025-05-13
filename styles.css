@@ -10895,13 +10895,13 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     }
 }
 
-#hero-wrapper {
+#hero-wrapper, #interior-wrapper {
     display: flex;
     flex-direction: column;
     margin: 0; padding: 0;
 }
 @media (min-width: 992px) {
-    #hero-wrapper { flex-direction: row; }
+    #hero-wrapper, #interior-wrapper { flex-direction: row; }
     .hero { width: 50%; }
 }
 
@@ -10934,20 +10934,20 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 /* copy-1 slides in from left */
-.copy-1 {
+.copy-1, .interior-1 {
     left: 10%;
     transform: translateX(-110%);
 }
-.copy-1.expanded {
+.copy-1.expanded, .interior-1.expanded {
     transform: translateX(0);
 }
 
 /* copy-2 slides in from right */
-.copy-2 {
+.copy-2, .interior-2 {
     right: 10%;
     transform: translateX(110%);
 }
-.copy-2.expanded {
+.copy-2.expanded, .interior-2.expanded {
     transform: translateX(0);
 }
 
@@ -10973,10 +10973,18 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 .copy-1 .overlay-close {
     right: -1.25rem;
 }
+.interior-1 .overlay-close {
+    right: -1.25rem;
+}
+
 /* slide-in from right, arrow on left edge */
 .copy-2 .overlay-close {
     left: -1.25rem;
 }
+.interior-2 .overlay-close {
+    left: -1.25rem;
+}
+
 
 /* optional hover feedback */
 .overlay-close:hover {
@@ -11120,5 +11128,122 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     .bottom-menu li {
         flex: 1 1 50%;        /* two per row */
         margin-bottom: 0.5rem;
+    }
+}
+
+/* wrapper: lay out side-by-side, no border/gap */
+#interior-wrapper {
+    display: flex;
+    align-items: flex-end;    /* align the bottom edges of each panel */
+    border: none;             /* remove any vertical divider */
+    margin: 2rem 0;           /* optional spacing top/bottom */
+}
+
+/* each hero panel */
+#interior-wrapper .hero {
+    position: relative;
+    flex: 1;                  /* take equal width */
+    overflow: hidden;         /* crop overflow */
+    height: 400px;            /* pick a consistent height */
+    margin: 0;                /* remove any default margins */
+    border: none;             /* ensure no borders */
+}
+
+/* background image covers and aligns to bottom */
+#interior-wrapper .hero-bg {
+    position: absolute;
+    bottom: 0;                /* pin image bottom to container bottom */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* cover container, cropping top if needed */
+    object-position: top center; /* ensure top stays visible */
+}
+
+/* green overlay boxes */
+.overlay-text {
+    position: absolute;
+    left: 50%;
+    width: 80%;                      /* unified width */
+    max-width: 600px;
+    min-height: 180px;               /* common height */
+    transform: translateX(-50%);
+    background: rgba(0,128,0,0.8);
+    color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    line-height: 1.4;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* vertical placement variants */
+.overlay-text.top    { top: 1rem; }
+.overlay-text.bottom { bottom: 1rem; }
+.overlay-text.center {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* DESKTOP overrides */
+@media (min-width: 769px) {
+    /* panels stay side by side */
+    #interior-wrapper { flex-direction: row; }
+
+    /* logo slides over to the very middle gutter */
+    .interior-logo {
+        left: 100%;
+        transform: translate(-100%, -50%);
+    }
+
+    /* both text boxes share same size */
+    .overlay-text {
+        width: 70%;     /* narrower on wide screens */
+        min-height: 200px;
+    }
+}
+
+/* MOBILE overrides */
+@media (max-width: 768px) {
+    #interior-wrapper { flex-direction: column; }
+
+    .interior-logo {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .overlay-text {
+        width: 90%;
+        min-height: 180px;
+    }
+}
+
+/* review-request tweaks */
+#review-request .qr-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* QR code should take up ~50% of viewport width, capped */
+#review-request .qr-logo-container .qr {
+    width: 50vw;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Logo stays beside it, but smaller */
+#review-request .qr-logo-container .logo {
+    width: auto;
+    max-width: 150px;
+    height: auto;
+}
+
+/* On wider screens, let the QR grow a bit more */
+@media (min-width: 768px) {
+    #review-request .qr-logo-container .qr {
+        max-width: 400px;
     }
 }

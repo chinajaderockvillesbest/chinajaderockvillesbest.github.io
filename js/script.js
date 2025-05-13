@@ -38,11 +38,36 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.querySelector('.interior-1').classList.add('expanded');
+    }, 4000); // delay in ms
+
+    // wire up each close button
+    document.querySelectorAll('.overlay-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement.classList.remove('expanded');
+        });
+    });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         document.querySelector('.copy-2').classList.add('expanded');
     }, 2000); // delay in ms
+
+    // wire up each close button
+    document.querySelectorAll('.overlay-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.parentElement.classList.remove('expanded');
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.querySelector('.interior-2').classList.add('expanded');
+    }, 5000); // delay in ms
 
     // wire up each close button
     document.querySelectorAll('.overlay-close').forEach(btn => {
