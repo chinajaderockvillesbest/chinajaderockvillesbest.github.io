@@ -118,6 +118,18 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
+/* make all of our menu‐hero sections taller and center their text */
+.menu-hero {
+    position: relative;
+    background-size: cover;      /* ensure the bg-image fills */
+    background-position: center; /* center/crop it nicely */
+    display: flex;
+    align-items: center;         /* vertically center the H4 */
+    justify-content: center;     /* horizontally center the H4 */
+    min-height: 30vh;            /* or whatever height you want */
+    padding: 2rem 1rem;          /* some breathing room on top/bottom */
+}
+
 /* ============================================
    HERO-BACKGROUND: grayscale + blur
    ============================================ */
@@ -192,6 +204,13 @@
         display: flex !important; /* make sure the container stays flex on mobile */
         flex-direction: column;
         align-items: center;
+    }
+
+    #interior-wrapper {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;            /* if you want no extra gap */
     }
 
     .hero {
