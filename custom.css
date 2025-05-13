@@ -24,7 +24,7 @@
 /* ============================================
    COMMON WRAPPER FOR HERO SECTIONS
    ============================================ */
-#hero-wrapper #interior-wrapper {
+#hero-wrapper {
     display: flex;
     flex-direction: column;
     margin-top: 0;  !important;
@@ -98,17 +98,21 @@
 }
 
 @media (min-width: 992px) {
-    #hero-wrapper #interior-wrapper {
+    #hero-wrapper {
         flex-direction: row;
     }
     /* each pane takes half the width */
-    .hero {
+    #hero-wrapper .hero {
         width: 50%;
     }
 }
 
+/* ============================================
+   MOBILE (≤768px) OVERRIDES
+   ============================================ */
+
 @media (max-width: 991px) {
-    #hero-wrapper #interior-wrapper {
+    #hero-wrapper {
         display: flex !important;   /* make sure the container stays flex on mobile */
         flex-direction: column;
         align-items: center;
