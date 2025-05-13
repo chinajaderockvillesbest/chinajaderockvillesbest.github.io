@@ -1,0 +1,269 @@
+/* ============================================
+   Translucent, blurred, fixed navbar (top-nav)
+   ============================================ */
+.overlay-nav {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    backdrop-filter: blur(2px);
+    z-index: 1000;                /* sit above everything */
+    box-shadow: none !important;  /* remove any default shadow */
+    border: none !important;
+}
+
+/* On mobile, keep it fixed (override any Bootstrap resets) */
+@media (max-width: 768px) {
+    .overlay-nav {
+        position: fixed !important;
+    }
+}
+
+/* ============================================
+   COMMON WRAPPER FOR HERO SECTIONS
+   ============================================ */
+#hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;  !important;
+    padding: 0;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* text‐overlay box */
+.hero-overlay {
+    position: absolute;
+    top: 20%;
+    width: 80%;
+    max-width: 500px;
+    background: rgba(25, 135, 84, 0.8);
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.6s ease;
+    z-index: 2;
+    line-height: 1.4;
+}
+
+/* slide-in positions for hero only */
+.copy-1 {
+    left: 10%;
+    transform: translateX(-110%);
+}
+.copy-1.expanded {
+    transform: translateX(0);
+}
+
+.copy-2 {
+    right: 10%;
+    transform: translateX(110%);
+}
+.copy-2.expanded {
+    transform: translateX(0);
+}
+
+/* close-button */
+.overlay-close {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem; height: 2.5rem;
+    background: rgba(0,0,0,0.3);
+    border: none;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 1.6rem;
+    cursor: pointer; z-index: 3;
+}
+.copy-1 .overlay-close { right: -1.25rem; }
+.copy-2 .overlay-close { left: -1.25rem; }
+.overlay-close:hover { background: rgba(0,0,0,0.5); }
+
+/* ============================================
+   HERO-BACKGROUND: grayscale + blur
+   ============================================ */
+#hero-wrapper .hero-bg {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: sepia(0.7) hue-rotate(25deg) saturate(2) brightness(0.8);
+    transition: filter 0.3s ease;
+    margin-top: 0;
+}
+
+@media (min-width: 992px) {
+    #hero-wrapper {
+        flex-direction: row;
+    }
+    /* each pane takes half the width */
+    #hero-wrapper .hero {
+        width: 50%;
+    }
+}
+
+/* ============================================
+   MOBILE (≤768px) OVERRIDES
+   ============================================ */
+
+@media (max-width: 991px) {
+    #hero-wrapper {
+        display: flex !important;   /* make sure the container stays flex on mobile */
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        width: 100% !important;
+    }
+
+    .hero-overlay {
+        width: 90%; max-width: none;
+    }
+}
+
+/* Background images for each section */
+.hero-authentic {
+    background-image: url('images/hero_authentic.png');
+}
+.hero-specials {
+    background-image: url('images/hero_specials_combos.png');
+}
+.hero-american {
+    background-image: url('images/hero_american.png');
+}
+.hero-beverages {
+    background-image: url('images/hero_beverages.png');
+}
+
+#community-mosaic {
+    padding: 0.5rem;
+}
+
+/* make each mosaic tile wrapper relative for its caption overlay */
+#community-mosaic .mosaic-item {
+    position: relative;
+    overflow: hidden;
+}
+
+/* the caption bar, hidden below the bottom by default */
+#community-mosaic .mosaic-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -100%;
+    padding: 0.75rem;
+    color: #ffffff;
+    background-color: rgba(25,135,84,0.75);     /* translucent green */
+    backdrop-filter: blur(3px);                  /* blurred behind text */
+    text-align: center;
+    transition: bottom 0.3s ease-in-out;
+}
+
+/* on hover, slide it up into view */
+#community-mosaic .mosaic-item:hover .mosaic-caption {
+    bottom: 0;
+}
+
+/* ensure gallery images fill their cards without gaps */
+#community-mosaic .card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* you can tweak text-size, line-height as needed */
+#community-mosaic .mosaic-caption {
+    font-size: 1rem;
+    line-height: 1.3;
+}
+
+/* review-request tweaks */
+#review-request .qr-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* QR code should take up ~50% of viewport width, capped */
+#review-request .qr-logo-container .qr {
+    width: 50vw;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Logo stays beside it, but smaller */
+#review-request .qr-logo-container .logo {
+    width: auto;
+    max-width: 150px;
+    height: auto;
+}
+
+/* On wider screens, let the QR grow a bit more */
+@media (min-width: 768px) {
+    #review-request .qr-logo-container .qr {
+        max-width: 400px;
+    }
+}
+
+/* Bottom fixed nav */
+/* 1. Bottom nav backdrop + blur */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+/* 2. Make the menu a flex row, always expanded */
+.bottom-menu {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    list-style: none;
+}
+
+/* 3. Center text & allow wrapping */
+.bottom-menu li {
+    flex: 1;
+}
+
+.bottom-menu li a {
+    display: block;         /* fill the li */
+    width: 100%;
+    text-align: center;     /* center both lines */
+    white-space: normal;    /* wrap long labels */
+    color: #004d33;
+    font-weight: 600;
+    padding: 0.5rem 0;
+}
+
+/* 4. Optional hover style */
+.bottom-menu li a:hover {
+    background: rgba(0,100,68,0.1);
+}
+
+/* 5. Two‐column wrap on very narrow screens */
+@media (max-width: 500px) {
+    .bottom-menu {
+        flex-wrap: wrap;
+    }
+    .bottom-menu li {
+        flex: 1 1 50%;        /* two per row */
+        margin-bottom: 0.5rem;
+    }
+}
