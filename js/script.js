@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { sel: '.copy-1', delay: 1000 },
         { sel: '.copy-2', delay: 2000 },
         { sel: '.interior-1', delay: 3000 },
-        { sel: '.interior-2', delay: 4000 },
+        { sel: '.interior-2', delay: 4000 }
     ];
 
     panels.forEach(({ sel, delay }) => {

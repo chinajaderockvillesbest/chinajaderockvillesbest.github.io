@@ -9,8 +9,8 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5) !important;
     backdrop-filter: blur(2px);
-    z-index: 1000;                /* sit above everything */
-    box-shadow: none !important;  /* remove any default shadow */
+    z-index: 1000; /* sit above everything */
+    box-shadow: none !important; /* remove any default shadow */
     border: none !important;
 }
 
@@ -27,7 +27,8 @@
 #hero-wrapper {
     display: flex;
     flex-direction: column;
-    margin-top: 0;  !important;
+    margin-top: 0;
+!important;
     padding: 0;
 }
 
@@ -46,24 +47,39 @@
     color: #fff;
     padding: 1rem 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.6s ease;
     z-index: 2;
-    line-height: 1.4;
 }
 
 /* slide-in positions for hero only */
-.copy-1, .interior-1 {
+/* 1) initial “off-screen” state for heroes */
+.copy-1 {
+    left: 5%;
+    transform: translateX(-110%);
+}
+
+.copy-2 {
+    right: 5%;
+    transform: translateX(110%);
+}
+
+/* 2) on .expanded, slide to zero */
+.copy-1.expanded,
+.copy-2.expanded {
+    transform: translateX(0);
+}
+
+.interior-1 {
     left: 5%;
 }
-.copy-2, .interior-2 {
+
+.interior-2 {
     right: 5%;
 }
 
 /* once expanded: */
-.copy-1.expanded,
 .interior-1.expanded,
-.copy-2.expanded,
 .interior-2.expanded {
     transform: translateX(0);
 }
@@ -73,17 +89,34 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 2.5rem; height: 2.5rem;
-    background: rgba(0,0,0,0.3);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(0, 0, 0, 0.3);
     border: none;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    color: #fff; font-size: 1.6rem;
-    cursor: pointer; z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 3;
 }
-.copy-1 .overlay-close { right: -1.25rem; }
-.copy-2 .overlay-close { left: -1.25rem; }
-.overlay-close:hover { background: rgba(0,0,0,0.5); }
+
+/* both hero and interior panels use the same button offset */
+.copy-1 .overlay-close,
+.interior-1 .overlay-close {
+    right: -1.25rem;
+}
+
+.copy-2 .overlay-close,
+.interior-2 .overlay-close {
+    left: -1.25rem;
+}
+
+.overlay-close:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
 
 /* ============================================
    HERO-BACKGROUND: grayscale + blur
@@ -92,7 +125,15 @@
     width: 100%;
     height: auto;
     display: block;
-    filter: sepia(0.6) hue-rotate(10deg) saturate(1.6) brightness(0.5) contrast(1.1);
+    filter: sepia(0.6) hue-rotate(-20deg) /* shift into the red zone */ saturate(1.8) /* boost color intensity */ brightness(0.6) contrast(1.1);
+    transition: filter 0.3s ease;
+    margin-top: 0;
+}
+
+#interior-wrapper .hero-bg {
+    width: 100%;
+    height: auto;
+    display: block;
     transition: filter 0.3s ease;
     margin-top: 0;
 }
@@ -101,10 +142,45 @@
     #hero-wrapper {
         flex-direction: row;
     }
+
     /* each pane takes half the width */
     #hero-wrapper .hero {
         width: 50%;
     }
+}
+
+#interior-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 992px) {
+    #interior-wrapper {
+        flex-direction: row;
+    }
+
+    #interior-wrapper .hero {
+        width: 50%;
+    }
+}
+
+/* slide-in start positions for interior panels */
+.interior-1 {
+    left: 5%;
+    transform: translateX(-110%);
+}
+
+.interior-2 {
+    right: 5%;
+    transform: translateX(110%);
+}
+
+/* once they get the .expanded class, they slide to 0 */
+.interior-1.expanded,
+.interior-2.expanded {
+    transform: translateX(0);
 }
 
 /* ============================================
@@ -113,7 +189,7 @@
 
 @media (max-width: 991px) {
     #hero-wrapper {
-        display: flex !important;   /* make sure the container stays flex on mobile */
+        display: flex !important; /* make sure the container stays flex on mobile */
         flex-direction: column;
         align-items: center;
     }
@@ -123,7 +199,8 @@
     }
 
     .hero-overlay {
-        width: 90%; max-width: none;
+        width: 90%;
+        max-width: none;
     }
 }
 
@@ -131,12 +208,15 @@
 .hero-authentic {
     background-image: url('images/hero_authentic.png');
 }
+
 .hero-specials {
     background-image: url('images/hero_specials_combos.png');
 }
+
 .hero-american {
     background-image: url('images/hero_american.png');
 }
+
 .hero-beverages {
     background-image: url('images/hero_beverages.png');
 }
@@ -159,8 +239,8 @@
     bottom: -100%;
     padding: 0.75rem;
     color: #ffffff;
-    background-color: rgba(25,135,84,0.75);     /* translucent green */
-    backdrop-filter: blur(3px);                  /* blurred behind text */
+    background-color: rgba(25, 135, 84, 0.75); /* translucent green */
+    backdrop-filter: blur(3px); /* blurred behind text */
     text-align: center;
     transition: bottom 0.3s ease-in-out;
 }
@@ -223,7 +303,7 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(4px);
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
@@ -242,10 +322,10 @@
 }
 
 .bottom-menu li a {
-    display: block;         /* fill the li */
+    display: block; /* fill the li */
     width: 100%;
-    text-align: center;     /* center both lines */
-    white-space: normal;    /* wrap long labels */
+    text-align: center; /* center both lines */
+    white-space: normal; /* wrap long labels */
     color: #004d33;
     font-weight: 600;
     padding: 0.5rem 0;
@@ -253,7 +333,7 @@
 
 /* 4. Optional hover style */
 .bottom-menu li a:hover {
-    background: rgba(0,100,68,0.1);
+    background: rgba(0, 100, 68, 0.1);
 }
 
 /* 5. Two‐column wrap on very narrow screens */
@@ -261,8 +341,9 @@
     .bottom-menu {
         flex-wrap: wrap;
     }
+
     .bottom-menu li {
-        flex: 1 1 50%;        /* two per row */
+        flex: 1 1 50%; /* two per row */
         margin-bottom: 0.5rem;
     }
 }
