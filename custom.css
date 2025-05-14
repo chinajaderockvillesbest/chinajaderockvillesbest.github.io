@@ -225,15 +225,15 @@
 
 /* Background images for each section */
 .hero-authentic {
-    background-image: url('images/hero_authentic.png');
+    background-image: url('images/header_sichuan.png');
 }
 
 .hero-specials {
-    background-image: url('images/hero_specials_combos.png');
+    background-image: url('images/menu-lunchspecial.png');
 }
 
 .hero-american {
-    background-image: url('images/hero_american.png');
+    background-image: url('images/header_americanchinese.png');
 }
 
 .hero-beverages {
