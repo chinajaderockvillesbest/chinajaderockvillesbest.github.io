@@ -238,23 +238,6 @@
     }
 }
 
-/* Background images for each section */
-.hero-authentic {
-    background-image: url('images/header_sichuan.png');
-}
-
-.hero-specials {
-    background-image: url('images/header_lunch_specials.png');
-}
-
-.hero-american {
-    background-image: url('images/header_american_chinese.png');
-}
-
-.hero-beverages {
-    background-image: url('images/header_beverages.png');
-}
-
 #community-mosaic {
     padding: 0.5rem;
 }
