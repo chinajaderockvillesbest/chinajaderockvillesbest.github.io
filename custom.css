@@ -231,7 +231,7 @@
 }
 
 .hero-specials {
-    background-image: url('images/header_lunchspecial.png');
+    background-image: url('images/header_lunch_specials.png');
 }
 
 .hero-american {
@@ -451,33 +451,40 @@
     }
 }
 
-
-/* ─── Angled Solid‐Shape Divider ────────────────── */
 .divider-angled {
     position: relative;
     text-align: center;
-    margin: 3rem 0;               /* space above/below */
+    padding: 1rem 0;      /* gives the pseudo-background its height */
+    overflow: visible;    /* so the skew doesn’t get clipped */
 }
 
+/* the green skewed shape behind the text */
 .divider-angled::before {
     content: "";
     position: absolute;
-    top: 50%; left: 50%;
-    width: 110%;                  /* extend beyond text for full bleed */
-    height: 2.5rem;               /* shape thickness */
-    background: rgba(25, 135, 84, 0.75);   /* translucent green, same as your captions */
-    transform: translate(-50%, -50%) skewX(-8deg);
-    z-index: 1;                   /* behind the text */
-    border-radius: 4px;           /* soften the corners a bit */
+    top: 0;               /* stick to the top of the padded container */
+    bottom: 0;            /* stick to the bottom, so it auto-scales */
+    left: -5%;            /* bleed out a bit on the sides */
+    right: -5%;
+    background: rgba(25, 135, 84, 0.2);  /* your translucent green */
+    transform: skewX(-8deg);
+    transform-origin: top left;
+    z-index: 1;
+    border-radius: 4px;
 }
 
+/* the white “pill” you read on top — un-skewed and sized to text */
 .divider-angled__text {
     position: relative;
     display: inline-block;
-    padding: 0.5rem 1rem;         /* gives breathing room on the slant */
-    color: #fff;                  /* or whatever text color contrasts */
-    font-size: 1rem;              /* tweak to taste */
-    z-index: 2;                   /* above the ::before shape */
+    transform: skewX(8deg);   /* counteract the parent’s skew */
+    padding: 0.25rem 1rem;     /* breathing room around the text */
+    background: #fff;          /* hides the green behind the letters */
+    color: #184d38;            /* dark green text if you prefer */
+    font-size: 1rem;
+    z-index: 2;
+    white-space: pre-wrap;     /* allow wrapping if it’s multiline */
+    max-width: 90%;            /* don’t let it blow past the viewport */
 }
 
 
