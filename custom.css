@@ -195,6 +195,8 @@
     transform: translateX(0);
 }
 
+
+
 /* ============================================
    MOBILE (≤768px) OVERRIDES
    ============================================ */
@@ -282,6 +284,88 @@
     line-height: 1.3;
 }
 
+
+/* page divider */
+/*.divider--gradient {*/
+/*    height: 1px;*/
+/*    background: linear-gradient(to right,*/
+/*    transparent,*/
+/*    rgba(0,0,0,0.4),*/
+/*    transparent*/
+/*    );*/
+/*    margin: 2rem 0;*/
+/*}*/
+/*.divider--icons {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    margin: 2rem 0;*/
+/*}*/
+/*.divider-line {*/
+/*    flex: 1;*/
+/*    border-top: 2px dashed #666;*/
+/*    margin: 0 1rem;*/
+/*}*/
+/*.divider-icons {*/
+/*    font-size: 1.2rem;*/
+/*    color: #b33;*/
+/*}*/
+/*!* ─── Text‐on‐a‐line divider ─────────────────────────────────── *!*/
+/*.divider-text {*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*    margin: 3rem 0;          !* space above/below *!*/
+/*}*/
+/*.divider-text::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: 50%;                !* centered vertically *!*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    border-top: 2px dashed #666; !* your line style *!*/
+/*    transform: translateY(-50%);*/
+/*}*/
+/*.divider-text__content {*/
+/*    position: relative;      !* sits above the ::before line *!*/
+/*    display: inline-block;   !* shrink to fit text *!*/
+/*    padding: 0 1rem;         !* horizontal padding so line peeks out *!*/
+/*    background: #fff;        !* match your page background *!*/
+/*    font-size: 1rem;         !* tweak as needed *!*/
+/*}*/
+/* ─── Gradient‐line Text Divider ─────────────────────────────────── */
+/*.divider-text {*/
+/*    position: relative;*/
+/*    text-align: center;*/
+/*    margin: 3rem 0;*/
+/*}*/
+/*.divider-text::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 10%;         !* leaves a little padding at the edges *!*/
+/*    right: 10%;*/
+/*    height: 2px;       !* thickness of the line *!*/
+/*    transform: translateY(-50%);*/
+/*    background: linear-gradient(*/
+/*            to right,*/
+/*            transparent,*/
+/*            #b33 20%,*/
+/*            #b33 80%,*/
+/*            transparent*/
+/*    );*/
+/*}*/
+/*.divider-text__content {*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*    padding: 0 1rem;*/
+/*    background: #fff;  !* match page background *!*/
+/*    font-size: 1rem;*/
+/*    color: #b33;       !* your accent color *!*/
+/*}*/
+
+
+
+
 /* review-request tweaks */
 #review-request .qr-logo-container {
     display: flex;
@@ -366,3 +450,35 @@
         margin-bottom: 0.5rem;
     }
 }
+
+
+/* ─── Angled Solid‐Shape Divider ────────────────── */
+.divider-angled {
+    position: relative;
+    text-align: center;
+    margin: 3rem 0;               /* space above/below */
+}
+
+.divider-angled::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 110%;                  /* extend beyond text for full bleed */
+    height: 2.5rem;               /* shape thickness */
+    background: rgba(25, 135, 84, 0.75);   /* translucent green, same as your captions */
+    transform: translate(-50%, -50%) skewX(-8deg);
+    z-index: 1;                   /* behind the text */
+    border-radius: 4px;           /* soften the corners a bit */
+}
+
+.divider-angled__text {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1rem;         /* gives breathing room on the slant */
+    color: #fff;                  /* or whatever text color contrasts */
+    font-size: 1rem;              /* tweak to taste */
+    z-index: 2;                   /* above the ::before shape */
+}
+
+
+
