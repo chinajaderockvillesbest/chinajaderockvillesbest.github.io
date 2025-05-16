@@ -118,16 +118,24 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
-/* make all of our menu‐hero sections taller and center their text */
 .menu-hero {
     position: relative;
-    background-size: cover;      /* ensure the bg-image fills */
-    background-position: center; /* center/crop it nicely */
-    display: flex;
-    align-items: center;         /* vertically center the H4 */
-    justify-content: center;     /* horizontally center the H4 */
-    min-height: 30vh;            /* or whatever height you want */
-    padding: 2rem 1rem;          /* some breathing room on top/bottom */
+    overflow: hidden;        /* if you ever want the text to overlay */
+    padding: 0;              /* let the IMG set the height */
+}
+
+.menu-hero__img {
+    display: block;
+    width: 100%;             /* fill full width */
+    height: auto;            /* scale height to keep aspect ratio */
+    object-fit: contain;     /* just in case a fixed-height container is ever used */
+}
+
+.menu-hero h4 {
+    position: absolute;      /* float on top of the image */
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
 }
 
 /* ============================================
@@ -235,7 +243,7 @@
 }
 
 .hero-american {
-    background-image: url('images/header_americanchinese.png');
+    background-image: url('images/header_american_chinese.png');
 }
 
 .hero-beverages {
