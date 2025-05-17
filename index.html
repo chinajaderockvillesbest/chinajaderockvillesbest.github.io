@@ -63,14 +63,27 @@
     <link href="styles.css" rel="stylesheet"/>
     <link href="custom.css" rel="stylesheet"/>
 </head>
-<body>
+<body id="top">
 <div class="d-flex" id="wrapper">
     <div id="page-content-wrapper">
-        <nav class="navbar navbar-expand-lg overlay-nav fixed-top">
+        <nav class="navbar navbar-expand-lg overlay-nav fixed-top align-items-center">
             <div class="container-fluid">
-                <ul class="navbar-nav">
+                <a class="navbar-brand p-0" href="#top">
+                    <img
+                            src="images/logo.webp"
+                            alt="China Jade Logo"
+                            height="30"
+                            width="30"
+                            loading="eager"
+                            class="d-inline-block align-text-top"
+                    >
+                </a>
+
+                <ul class="navbar-nav flex-row align-items-center flex-nowrap">
                     <li class="nav-item">
-                        <a class="nav-link fw-semibold" href="#testimonials">Famous People Testimonials</a>
+                        <a class="nav-link fw-semibold" href="#testimonials">
+                            Famous Testimonials
+                        </a>
                     </li>
                 </ul>
 
@@ -157,7 +170,7 @@
 
                 <div class="hero-overlay copy-2">
                     <button class="overlay-close right-arrow" aria-label="Collapse panel">›</button>
-                    <small>Authentic Szechuan & Cantonese. Crafted by award-winning chefs trained at the Szechuan Higher Institute of Cuisine and Cantonese meals loved by the community for four decades. Stop by for dine-in, take-out or delivery!</small>
+                    <small>Authentic Szechuan & Cantonese flavors crafted by award-winning chefs trained at the Szechuan Higher Institute of Cuisine and Cantonese meals loved by the community for four decades. Stop by for dine-in, take-out or delivery!</small>
                     <small>地道川粤滋味由四川烹饪高等专科学校出身、屡获大奖的名厨精心打造；粤式经典四十载深受街坊喜爱。</small>
                 </div>
             </section>
@@ -207,10 +220,10 @@
         </section>
 
         <section id="testimonials" class="container py-2">
-            <h4 class="text-center pt-5">Famous People Testimonials</h4>
+            <h4 class="text-center pt-5">China Jade 贵妃楼 Famous Customers' Testimonials</h4>
             <div class="row g-2">
                 <div class="col-12 col-lg-6">
-                    <div class="card h-100">
+                    <div class="card h-100 shadow">
                         <div class="card-body">
                             <small class="card-text">
                                 “Last minute adding another double cooked pork, love the Vegetable Fried Rice, Vegetable Lo Mein!”
@@ -221,7 +234,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="card h-100">
+                    <div class="card h-100 shadow">
                         <div class="card-body">
                             <small class="card-text">
                                 “Wonderful authentic Chinese Family Combo and Fish Filet with Vegetable in Peppery Broth, Steamed Chicken with Szechuan Spicy Sauce.”
@@ -232,7 +245,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="card h-100">
+                    <div class="card h-100 shadow">
                         <div class="card-body">
                             <small class="card-text">
                                 “A Szechuanese’s favorite Chengdu Kongpao Chicken, Fresh Pork Belly Pan Fried with Chilli Lao Gan Ma Sauce, Chengdu Mapo Tofu.”
@@ -243,7 +256,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="card h-100">
+                    <div class="card h-100 shadow">
                         <div class="card-body">
                             <small class="card-text">
                                 “Favorites are House Special Guifei Chicken, Chengdu Kongpao Chicken, Garlic Flavored Pork Chops, Scallion Pancakes. Very friendly manager.”
@@ -254,7 +267,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="card h-100">
+                    <div class="card h-100 shadow">
                         <div class="card-body">
                             <small class="card-text">
                                 “Family customized vegetarian dishes to be extra spicy. Eggplant in Garlic Sauce, Crispy Tofu in Garlic Sauce, Kongpao Tofu, Fried Tofu with Vegetables, Crispy Tofu with Vegetables.”
@@ -265,7 +278,7 @@
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="card h-100">
+                    <div class="card h-100 shadow">
                         <div class="card-body">
                             <small class="card-text">
                                 “Favorites are Steak in Black Pepper Sauce, Hot & Sour Intestine Yam Noodles, Garlic Flavor Crispy Fish Filet, Fish Filet with Pickled Vegetables and Yam Noodle Soup.”
@@ -279,85 +292,268 @@
 
         <section id="community-mosaic" class="container-fluid">
             <div class="row gx-0" data-masonry='{"percentPosition": true}'>
-                <!-- tile 1 -->
+
+                <!-- tile 1: News Actress Visit -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_cake.jpg"
-                             class="card-img-top"
-                             alt="Community Cake &amp; Dessert">
-                        <div class="mosaic-caption">Support local family restaurants and small businesses</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_news_actress-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_news_actress-800w.webp">
+                            <img
+                                    src="images/comm_news_actress-800w.webp"
+                                    class="card-img-top"
+                                    alt="News Actress Visit"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Local news actress featured at our restaurant
+                        </div>
                     </div>
                 </div>
-                <!-- tile 2 -->
+
+                <!-- tile 2: With the Governor -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_governor.jpg"
-                             class="card-img-top"
-                             alt="With the Governor">
-                        <div class="mosaic-caption">Maryland Lieutenant Governor Aruna Miller and friends</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_governor-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_governor-800w.webp">
+                            <img
+                                    src="images/comm_governor-800w.webp"
+                                    class="card-img-top"
+                                    alt="With the Governor"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Maryland Lieutenant Governor Aruna Miller and friends
+                        </div>
                     </div>
                 </div>
-                <!-- tile 3 -->
+
+                <!-- tile 3: Hospital Team -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_hospital.jpg"
-                             class="card-img-top"
-                             alt="Hospital Team">
-                        <div class="mosaic-caption">Thank you health angels in DC/Maryland/Virginia and more</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_hospital-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_hospital-800w.webp">
+                            <img
+                                    src="images/comm_hospital-800w.webp"
+                                    class="card-img-top"
+                                    alt="Hospital Team"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Thank you health angels in DC/Maryland/Virginia and more
+                        </div>
                     </div>
                 </div>
-                <!-- tile 4 -->
+
+                <!-- tile 4: Julie & Yong at Boardwalk -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_julie_yong.jpg"
-                             class="card-img-top"
-                             alt="Julie &amp; Yong at Boardwalk">
-                        <div class="mosaic-caption">Advocate for our community with Board of Education Julie Yang</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_julie_yong-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_julie_yong-800w.webp">
+                            <img
+                                    src="images/comm_julie_yong-800w.webp"
+                                    class="card-img-top"
+                                    alt="Julie &amp; Yong at Boardwalk"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Advocate for our community with Board of Education Julie Yang
+                        </div>
                     </div>
                 </div>
-                <!-- tile 5 -->
+
+                <!-- tile 5: Nonprofit Delivery -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_nonprofit.jpg"
-                             class="card-img-top"
-                             alt="Nonprofit Delivery">
-                        <div class="mosaic-caption">Nonprofit Delivery</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_nonprofit-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_nonprofit-800w.webp">
+                            <img
+                                    src="images/comm_nonprofit-800w.webp"
+                                    class="card-img-top"
+                                    alt="Nonprofit Delivery"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Nonprofit Delivery
+                        </div>
                     </div>
                 </div>
-                <!-- tile 6 -->
+
+                <!-- tile 6: School Event -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_school.jpg"
-                             class="card-img-top"
-                             alt="School Event">
-                        <div class="mosaic-caption">School Event</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_school-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_school-800w.webp">
+                            <img
+                                    src="images/comm_school-800w.webp"
+                                    class="card-img-top"
+                                    alt="School Event"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            School Event
+                        </div>
                     </div>
                 </div>
-                <!-- tile 7 -->
+
+                <!-- tile 7: Appreciation 2016 -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_appreciation_2016.jpg"
-                             class="card-img-top"
-                             alt="Appreciation 2016">
-                        <div class="mosaic-caption">Appreciation from neighboring organizations</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_appreciation_2016-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_appreciation_2016-800w.webp">
+                            <img
+                                    src="images/comm_appreciation_2016-800w.webp"
+                                    class="card-img-top"
+                                    alt="Appreciation 2016"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Appreciation from neighboring organizations
+                        </div>
                     </div>
                 </div>
-                <!-- tile 8 -->
+
+                <!-- tile 8: Appreciation 2017 -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_appreciation_2017.jpg"
-                             class="card-img-top"
-                             alt="Appreciation 2017">
-                        <div class="mosaic-caption">More not pictured of appreciations every year from neighboring organizations</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_appreciation_2017-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_appreciation_2017-800w.webp">
+                            <img
+                                    src="images/comm_appreciation_2017-800w.webp"
+                                    class="card-img-top"
+                                    alt="Appreciation 2017"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            More appreciative notes from neighboring organizations over the years
+                        </div>
                     </div>
                 </div>
-                <!-- tile 9 -->
+
+                <!-- tile 9: Appreciation 2023 -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
                     <div class="card border-0 mosaic-item">
-                        <img src="images/comm_appreciation_2023.jpg"
-                             class="card-img-top"
-                             alt="Appreciation 2023">
-                        <div class="mosaic-caption">Appreciation 2023</div>
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_appreciation_2023-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_appreciation_2023-800w.webp">
+                            <img
+                                    src="images/comm_appreciation_2023-800w.webp"
+                                    class="card-img-top"
+                                    alt="Appreciation 2023"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Appreciation 2023
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tile 10: Community Poster -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
+                    <div class="card border-0 mosaic-item">
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_poster-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_poster-800w.webp">
+                            <img
+                                    src="images/comm_poster-800w.webp"
+                                    class="card-img-top"
+                                    alt="Community Poster"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Community Poster
+                        </div>
+                    </div>
+                </div>
+
+                <!-- tile 11: Community Cake & Dessert -->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
+                    <div class="card border-0 mosaic-item">
+                        <picture>
+                            <source
+                                    media="(max-width: 767px)"
+                                    type="image/webp"
+                                    srcset="images/comm_cake-400w.webp">
+                            <source
+                                    media="(min-width: 768px)"
+                                    type="image/webp"
+                                    srcset="images/comm_cake-800w.webp">
+                            <img
+                                    src="images/comm_cake-800w.webp"
+                                    class="card-img-top"
+                                    alt="Community Cake &amp; Dessert"
+                                    loading="lazy">
+                        </picture>
+                        <div class="mosaic-caption">
+                            Support local family restaurants and small businesses
+                        </div>
                     </div>
                 </div>
             </div>
@@ -389,7 +585,7 @@
                         class="menu-hero__img"
                         loading="eager"
                         width="1200"
-                        height="900">
+                        height="897">
             </picture>
             <h4 class="text-bg-success bg-opacity-50 text-white">
                 Authentic Szechuan & Cantonese<br>
@@ -1915,27 +2111,27 @@
         <section id="header-specials-combos" class="menu-hero hero-specials text-center">
             <picture>
                 <source
-                        media="(max-width: 767px)"
+                        media="(max-width: 600px)"
                         type="image/webp"
-                        srcset="images/header_lunch_specials-600w.webp">
+                        srcset="images/header_lunch_special-600w.webp">
                 <source
-                        media="(min-width: 768px) and (max-width: 1799px)"
+                        media="(min-width: 601px) and (max-width: 1200px)"
                         type="image/webp"
-                        srcset="images/header_lunch_specials-1200w.webp">
+                        srcset="images/header_lunch_special-1200w.webp">
                 <source
-                        media="(min-width: 1800px)"
+                        media="(min-width: 1201px)"
                         type="image/webp"
-                        srcset="images/header_lunch_specials-1800w.webp">
+                        srcset="images/header_lunch_special-1800w.webp">
                 <img
-                        src="images/header_lunch_specials-1200w.webp"
+                        src="images/header_lunch_special-1200w.webp"
                         alt="Lunch specials and family combos"
                         class="menu-hero__img"
                         loading="eager"
                         width="1200"
-                        height="900">
+                        height="673">
             </picture>
             <h4 class="text-bg-success bg-opacity-50 text-white">
-                Authentic Sichuan Lunch Specials, American Chinese Lunch Specials, Authentic Chinese Family Party Combos<br>
+                Authentic Szechuan Lunch Specials, American Chinese Lunch Specials, Authentic Chinese Family Combos<br>
                 特制午餐与家庭套餐
             </h4>
         </section>
@@ -2570,15 +2766,15 @@
         <section id="header-american-chinese" class="menu-hero text-center">
             <picture>
                 <source
-                        media="(max-width: 767px)"
+                        media="(max-width: 600px)"
                         type="image/webp"
                         srcset="images/header_american_chinese-600w.webp">
                 <source
-                        media="(min-width: 768px) and (max-width: 1799px)"
+                        media="(min-width: 601px) and (max-width: 1200px)"
                         type="image/webp"
                         srcset="images/header_american_chinese-1200w.webp">
                 <source
-                        media="(min-width: 1800px)"
+                        media="(min-width: 1201px)"
                         type="image/webp"
                         srcset="images/header_american_chinese-1800w.webp">
                 <img
@@ -2587,7 +2783,7 @@
                         class="menu-hero__img"
                         loading="eager"
                         width="1200"
-                        height="900">
+                        height="895">
             </picture>
             <h4 class="text-bg-success bg-opacity-50 text-white">
                 American Chinese<br>
@@ -4371,7 +4567,7 @@
                         class="menu-hero__img"
                         loading="eager"
                         width="1200"
-                        height="900">
+                        height="800">
             </picture>
             <h4 class="text-bg-success bg-opacity-50 text-white">
                 Beverages & Bar<br>
@@ -4502,7 +4698,7 @@
             </div>
         </section>
 
-        <section id="review-request" class="container mb-5">
+        <section id="review-request" class="container">
             <div class="card shadow">
                 <div class="card-body text-center">
                     <h5>Support Local Small Business</h5>
@@ -4520,13 +4716,58 @@
                         Review us on Google
                     </a>
 
-                    <!-- QR + logo side by side -->
-                    <div class="qr-logo-container mb-5 pb-3">
+                    <div class="qr-logo-container d-flex justify-content-center align-items-center">
                         <img
-                                src="images/review_qr_google.png"
+                                src="images/review_qr_google.webp"
                                 alt="Review QR Code"
                                 class="qr"
+                                width="200"
+                                height="200"
+                                loading="lazy"
                         />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rewards Signup & Other Locations -->
+        <section id="locations-signup" class="container mb-5">
+            <div class="row g-4">
+                <!-- Rewards Signup Form -->
+                <div class="col-12 col-md-4">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">Join Our Rewards</h5>
+                            <p class="card-text">
+                                Sign up today and earn points toward FREE dishes, exclusive offers, and more!
+                            </p>
+                            <form id="rewards-form" class="row g-3">
+                                <div class="col-12">
+                                    <label for="rw-name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="rw-name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="rw-email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="rw-email" placeholder="you@example.com" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="rw-phone" class="form-label">Phone</label>
+                                    <input type="tel" class="form-control" id="rw-phone" placeholder="(555) 123-4567">
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-success w-100">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map of Other Locations -->
+                <div class="col-12 col-md-8">
+                    <div class="card shadow">
+                        <div class="card-body p-0">
+                            <div id="locations-map" style="width: 100%; height: 400px;"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -4554,6 +4795,51 @@
             gutter: 0
         });
     });
+</script>
+<script>
+    function initMap() {
+        // Center map roughly on the DMV
+        const center = { lat: 38.90, lng: -77.15 };
+        const map = new google.maps.Map(document.getElementById("locations-map"), {
+            zoom: 10,
+            center: center,
+        });
+
+        // Define your locations
+        const locations = [
+            {
+                name: "China Jade Rockville",
+                position: { lat: 39.0936, lng: -77.1531 },
+                info: `<strong>China Jade Rockville</strong><br>16805 Crabbs Branch Way, Rockville, MD`
+            },
+            {
+                name: "Hong Kong Palace",
+                position: { lat: 38.8814, lng: -77.1909 },
+                info: `<strong>Hong Kong Palace</strong><br>6387 Seven Corners Center, Falls Church, VA`
+            }
+        ];
+
+        // Add markers and info windows
+        locations.forEach(loc => {
+            const marker = new google.maps.Marker({
+                position: loc.position,
+                map: map,
+                title: loc.name,
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                }
+            });
+            const infoWindow = new google.maps.InfoWindow({
+                content: loc.info
+            });
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+        });
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 </script>
 <script src="js/script.js"></script>
 </body>

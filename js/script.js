@@ -32,3 +32,5 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.parentElement.classList.remove('expanded');
         }));
 });
+
+<!-- Google Maps JS API (free tier) -->

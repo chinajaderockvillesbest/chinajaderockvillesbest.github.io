@@ -8,7 +8,7 @@ SRC_DIR="images"
 
 # List of “basename widths…” entries
 IMAGES=(
-  "header_beverages_bar             600 1200 1800"
+  "comm_news_actress             400 800"
 )
 
 # Ensure cwebp is installed
