@@ -5,6 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>China Jade</title>
     <link rel="icon" type="image/x-icon" href="images/logo.png"/>
+    <link rel="preload"
+          as="image"
+          href="images/hero_awards-1800w.webp"
+          imagesrcset="
+          images/hero_awards-600w.webp 600w,
+          images/hero_awards-1200w.webp 1200w,
+          images/hero_awards-1800w.webp 1800w
+        "
+          imagesizes="
+          (max-width: 767px) 600px,
+          (max-width: 1199px) 1200px,
+          1800px
+        ">
+    <!-- Hero #2 preload -->
+    <link rel="preload"
+          as="image"
+          href="images/hero_news-1800w.webp"
+          imagesrcset="
+          images/hero_news-600w.webp 600w,
+          images/hero_news-1200w.webp 1200w,
+          images/hero_news-1800w.webp 1800w
+        "
+          imagesizes="
+          (max-width: 767px) 600px,
+          (max-width: 1199px) 1200px,
+          1800px
+        ">
+    <!-- Interior #1 preload -->
+    <link rel="preload"
+          as="image"
+          href="images/section_interior_1-1800w.webp"
+          imagesrcset="
+          images/section_interior_1-600w.webp 600w,
+          images/section_interior_1-1200w.webp 1200w,
+          images/section_interior_1-1800w.webp 1800w
+        "
+          imagesizes="
+          (max-width: 767px) 600px,
+          (max-width: 1199px) 1200px,
+          1800px
+        ">
+    <!-- Interior #2 preload -->
+    <link rel="preload"
+          as="image"
+          href="images/section_interior_2-1800w.webp"
+          imagesrcset="
+          images/section_interior_2-600w.webp 600w,
+          images/section_interior_2-1200w.webp 1200w,
+          images/section_interior_2-1800w.webp 1800w
+        "
+          imagesizes="
+          (max-width: 767px) 600px,
+          (max-width: 1199px) 1200px,
+          1800px
+        ">
     <link href="styles.css" rel="stylesheet"/>
     <link href="custom.css" rel="stylesheet"/>
 </head>
@@ -64,67 +119,89 @@
             </div>
         </nav>
 
-        <!-- Heroes: stacked on mobile, side-by-side on lg -->
+        <!-- Hero Wrapper -->
         <section id="hero-wrapper">
             <!-- Hero #1 -->
             <section class="hero">
-                <img src="images/hero_awards.webp" alt="Awards collage" class="hero-bg"/>
+                <picture>
+                    <source media="(max-width: 767px)" type="image/webp" srcset="images/hero_awards-600w.webp">
+                    <source media="(min-width: 768px) and (max-width: 1199px)" type="image/webp" srcset="images/hero_awards-1200w.webp">
+                    <source media="(min-width: 1200px)" type="image/webp" srcset="images/hero_awards-1800w.webp">
+                    <img src="images/hero_awards-1200w.webp"
+                         alt="Awards collage"
+                         class="hero-bg"
+                         loading="eager"
+                         width="1200"
+                         height="900">
+                </picture>
                 <div class="hero-overlay copy-1">
-                    <button class="overlay-close left-arrow" aria-label="Collapse panel">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
-                        </svg>
-                    </button>
+                    <button class="overlay-close left-arrow" aria-label="Collapse panel">‹</button>
                     <small>Where every ingredient tells a story. Family-owned artisan-crafted since 1980. No pre-made dishes, no shortcuts, just made-to-order, customizable dishes. Check out our new drinks in the beverages menu!</small>
                     <small>每一道食材都有故事——匠心1980年至今。拒绝科技与狠活预制菜与捷径，只献上即时鲜香。饮料菜单中有新饮料！</small>
                 </div>
             </section>
+
             <!-- Hero #2 -->
             <section class="hero">
-                <img src="images/hero_news.webp" alt="Press clippings collage" class="hero-bg"/>
+                <picture>
+                    <source media="(max-width: 767px)" type="image/webp" srcset="images/hero_news-600w.webp">
+                    <source media="(min-width: 768px) and (max-width: 1199px)" type="image/webp" srcset="images/hero_news-1200w.webp">
+                    <source media="(min-width: 1200px)" type="image/webp" srcset="images/hero_news-1800w.webp">
+                    <img src="images/hero_news-1200w.webp"
+                         alt="Press clippings collage"
+                         class="hero-bg"
+                         loading="eager"
+                         width="1200"
+                         height="900">
+                </picture>
+
                 <div class="hero-overlay copy-2">
-                    <button class="overlay-close right-arrow" aria-label="Collapse panel">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
-                        </svg>
-                    </button>
-                    <small>Authentic Szechuan &amp; Cantonese. Crafted by award-winning chefs trained at the Szechuan Higher Institute of Cuisine and Cantonese meals loved by the community for four decades. Stop by for dine-in, take-out or delivery!</small>
+                    <button class="overlay-close right-arrow" aria-label="Collapse panel">›</button>
+                    <small>Authentic Szechuan & Cantonese. Crafted by award-winning chefs trained at the Szechuan Higher Institute of Cuisine and Cantonese meals loved by the community for four decades. Stop by for dine-in, take-out or delivery!</small>
                     <small>地道川粤滋味由四川烹饪高等专科学校出身、屡获大奖的名厨精心打造；粤式经典四十载深受街坊喜爱。</small>
                 </div>
             </section>
         </section>
 
+        <!-- Interior Wrapper -->
         <section id="interior-wrapper">
             <!-- Interior #1 -->
             <section class="hero">
-                <img src="images/section_interior_1.webp"
-                                    alt="Awards collage"
-                                    class="hero-bg"/>
+                <picture>
+                    <source media="(max-width: 767px)" type="image/webp" srcset="images/section_interior_1-600w.webp">
+                    <source media="(min-width: 768px) and (max-width: 1199px)" type="image/webp" srcset="images/section_interior_1-1200w.webp">
+                    <source media="(min-width: 1200px)" type="image/webp" srcset="images/section_interior_1-1800w.webp">
+                    <img src="images/section_interior_1-1200w.webp"
+                         alt="Interior view #1"
+                         class="hero-bg"
+                         loading="lazy"
+                         width="1200"
+                         height="900">
+                </picture>
                 <div class="hero-overlay interior-1">
-                    <button class="overlay-close left-arrow" aria-label="Collapse panel">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5M10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5"/>
-                        </svg>
-                    </button>
-                    <small>Free Wifi dining in! Lazy Susan Revolving Round table for the perfect party. Bar with wine and beer (BYOB is O.K. too).</small>
+                    <button class="overlay-close left-arrow" aria-label="Collapse panel">‹</button>
+                    <small>Free Wifi dining in! Lazy Susan revolving table for the perfect party. Bar with wine and beer (BYOB is O.K. too).</small>
                     <small>堂吃免费上网。旋转圆桌享受快乐多人排队。可享用bar的冰镇啤酒等，也可以自带酒饮</small>
-                    <small></small>
                 </div>
             </section>
 
             <!-- Interior #2 -->
             <section class="hero">
-                <img src="images/section_interior_2.webp"
-                                    alt="Press clippings collage"
-                                    class="hero-bg"/>
+                <picture>
+                    <source media="(max-width: 767px)" type="image/webp" srcset="images/section_interior_2-600w.webp">
+                    <source media="(min-width: 768px) and (max-width: 1199px)" type="image/webp" srcset="images/section_interior_2-1200w.webp">
+                    <source media="(min-width: 1200px)" type="image/webp" srcset="images/section_interior_2-1800w.webp">
+                    <img src="images/section_interior_2-1200w.webp"
+                         alt="Interior view #2"
+                         class="hero-bg"
+                         loading="lazy"
+                         width="1200"
+                         height="900">
+                </picture>
                 <div class="hero-overlay interior-2">
-                    <button class="overlay-close right-arrow" aria-label="Collapse panel">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8m-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5"/>
-                        </svg>
-                    </button>
-                    <small>Swap out ingredients, or even bring your own. For example, supply a whole fish you’d like for a special way, we’ll happily prepare any style for you—just a small preparation fee applies.</small>
-                    <small>可以更换蛋白质或其他配料，甚至自带食材。例如，自带特殊日期享用整条活鱼想按特定方式烹饪，我们很乐意为烹制——只需支付少量加工费。</small>
+                    <button class="overlay-close right-arrow" aria-label="Collapse panel">›</button>
+                    <small>Swap out ingredients, or even bring your own. Supply a whole fish you’d like for a special preparation—small fee applies.</small>
+                    <small>可以更换蛋白质或其他配料，甚至自带食材。例如，自带特殊日期享用整条活鱼想按特定方式烹饪，我们很乐意为您烹制——只需支付少量加工费。</small>
                 </div>
             </section>
         </section>
