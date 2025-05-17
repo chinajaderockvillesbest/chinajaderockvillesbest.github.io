@@ -125,8 +125,8 @@
             <section class="hero">
                 <picture>
                     <source media="(max-width: 767px)" type="image/webp" srcset="images/hero_awards-600w.webp">
-                    <source media="(min-width: 768px) and (max-width: 1199px)" type="image/webp" srcset="images/hero_awards-1200w.webp">
-                    <source media="(min-width: 1200px)" type="image/webp" srcset="images/hero_awards-1800w.webp">
+                    <source media="(min-width: 768px) and (max-width: 1799px)" type="image/webp" srcset="images/hero_awards-1200w.webp">
+                    <source media="(min-width: 1800px)" type="image/webp" srcset="images/hero_awards-1800w.webp">
                     <img src="images/hero_awards-1200w.webp"
                          alt="Awards collage"
                          class="hero-bg"
@@ -145,8 +145,8 @@
             <section class="hero">
                 <picture>
                     <source media="(max-width: 767px)" type="image/webp" srcset="images/hero_news-600w.webp">
-                    <source media="(min-width: 768px) and (max-width: 1199px)" type="image/webp" srcset="images/hero_news-1200w.webp">
-                    <source media="(min-width: 1200px)" type="image/webp" srcset="images/hero_news-1800w.webp">
+                    <source media="(min-width: 768px) and (max-width: 1799px)" type="image/webp" srcset="images/hero_news-1200w.webp">
+                    <source media="(min-width: 1800px)" type="image/webp" srcset="images/hero_news-1800w.webp">
                     <img src="images/hero_news-1200w.webp"
                          alt="Press clippings collage"
                          class="hero-bg"
@@ -169,14 +169,14 @@
             <section class="hero">
                 <picture>
                     <source media="(max-width: 767px)" type="image/webp" srcset="images/section_interior_1-600w.webp">
-                    <source media="(min-width: 768px) and (max-width: 1199px)" type="image/webp" srcset="images/section_interior_1-1200w.webp">
-                    <source media="(min-width: 1200px)" type="image/webp" srcset="images/section_interior_1-1800w.webp">
+                    <source media="(min-width: 768px) and (max-width: 1799px)" type="image/webp" srcset="images/section_interior_1-1200w.webp">
+                    <source media="(min-width: 1800px)" type="image/webp" srcset="images/section_interior_1-1800w.webp">
                     <img src="images/section_interior_1-1200w.webp"
                          alt="Interior view #1"
                          class="hero-bg"
                          loading="lazy"
                          width="1200"
-                         height="900">
+                         height="911">
                 </picture>
                 <div class="hero-overlay interior-1">
                     <button class="overlay-close left-arrow" aria-label="Collapse panel">‹</button>
@@ -189,14 +189,14 @@
             <section class="hero">
                 <picture>
                     <source media="(max-width: 767px)" type="image/webp" srcset="images/section_interior_2-600w.webp">
-                    <source media="(min-width: 768px) and (max-width: 1199px)" type="image/webp" srcset="images/section_interior_2-1200w.webp">
-                    <source media="(min-width: 1200px)" type="image/webp" srcset="images/section_interior_2-1800w.webp">
+                    <source media="(min-width: 768px) and (max-width: 1799px)" type="image/webp" srcset="images/section_interior_2-1200w.webp">
+                    <source media="(min-width: 1800px)" type="image/webp" srcset="images/section_interior_2-1800w.webp">
                     <img src="images/section_interior_2-1200w.webp"
                          alt="Interior view #2"
                          class="hero-bg"
                          loading="lazy"
                          width="1200"
-                         height="900">
+                         height="911">
                 </picture>
                 <div class="hero-overlay interior-2">
                     <button class="overlay-close right-arrow" aria-label="Collapse panel">›</button>
@@ -278,7 +278,6 @@
         </section>
 
         <section id="community-mosaic" class="container-fluid">
-            <h4 class="text-center">Community Appreciation</h4>
             <div class="row gx-0" data-masonry='{"percentPosition": true}'>
                 <!-- tile 1 -->
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-0">
@@ -371,16 +370,31 @@
         </div>
 
         <section id="header-authentic" class="menu-hero hero-authentic text-center">
-            <img
-                    src="images/header_authentic.webp"
-                    alt="Authentic Szechuan & Cantonese dishes"
-                    class="menu-hero__img"
-            />
+            <picture>
+                <source
+                        media="(max-width: 767px)"
+                        type="image/webp"
+                        srcset="images/header_authentic-600w.webp">
+                <source
+                        media="(min-width: 768px) and (max-width: 1799px)"
+                        type="image/webp"
+                        srcset="images/header_authentic-1200w.webp">
+                <source
+                        media="(min-width: 1800px)"
+                        type="image/webp"
+                        srcset="images/header_authentic-1800w.webp">
+                <img
+                        src="images/header_authentic-1200w.webp"
+                        alt="Authentic Szechuan & Cantonese dishes"
+                        class="menu-hero__img"
+                        loading="eager"
+                        width="1200"
+                        height="900">
+            </picture>
             <h4 class="text-bg-success bg-opacity-50 text-white">
                 Authentic Szechuan & Cantonese<br>
                 地道川粤滋味
             </h4>
-
         </section>
 
         <section id="authentic-szechuan-appetizers" class="card menu-section text-center shadow">
@@ -1899,11 +1913,27 @@
         </section>
 
         <section id="header-specials-combos" class="menu-hero hero-specials text-center">
-            <img
-                    src="images/header_lunch_specials.webp"
-                    alt="Lunch specials and family combos"
-                    class="menu-hero__img"
-            />
+            <picture>
+                <source
+                        media="(max-width: 767px)"
+                        type="image/webp"
+                        srcset="images/header_lunch_specials-600w.webp">
+                <source
+                        media="(min-width: 768px) and (max-width: 1799px)"
+                        type="image/webp"
+                        srcset="images/header_lunch_specials-1200w.webp">
+                <source
+                        media="(min-width: 1800px)"
+                        type="image/webp"
+                        srcset="images/header_lunch_specials-1800w.webp">
+                <img
+                        src="images/header_lunch_specials-1200w.webp"
+                        alt="Lunch specials and family combos"
+                        class="menu-hero__img"
+                        loading="eager"
+                        width="1200"
+                        height="900">
+            </picture>
             <h4 class="text-bg-success bg-opacity-50 text-white">
                 Authentic Sichuan Lunch Specials, American Chinese Lunch Specials, Authentic Chinese Family Party Combos<br>
                 特制午餐与家庭套餐
@@ -2538,11 +2568,27 @@
         </section>
 
         <section id="header-american-chinese" class="menu-hero text-center">
-            <img
-                    src="images/header_american_chinese.webp"
-                    alt="American Chinese dishes"
-                    class="menu-hero__img"
-            />
+            <picture>
+                <source
+                        media="(max-width: 767px)"
+                        type="image/webp"
+                        srcset="images/header_american_chinese-600w.webp">
+                <source
+                        media="(min-width: 768px) and (max-width: 1799px)"
+                        type="image/webp"
+                        srcset="images/header_american_chinese-1200w.webp">
+                <source
+                        media="(min-width: 1800px)"
+                        type="image/webp"
+                        srcset="images/header_american_chinese-1800w.webp">
+                <img
+                        src="images/header_american_chinese-1200w.webp"
+                        alt="American Chinese dishes"
+                        class="menu-hero__img"
+                        loading="eager"
+                        width="1200"
+                        height="900">
+            </picture>
             <h4 class="text-bg-success bg-opacity-50 text-white">
                 American Chinese<br>
                 美式中餐
@@ -4305,12 +4351,28 @@
             </div>
         </section>
 
-        <section id="header-beverages" class="menu-hero text-center">
-            <img
-                    src="images/header_beverages.webp"
-                    alt="Beverages and Bar"
-                    class="menu-hero__img"
-            />
+        <section id="header-beverages-bar" class="menu-hero text-center">
+            <picture>
+                <source
+                        media="(max-width: 767px)"
+                        type="image/webp"
+                        srcset="images/header_beverages_bar-600w.webp">
+                <source
+                        media="(min-width: 768px) and (max-width: 1799px)"
+                        type="image/webp"
+                        srcset="images/header_beverages_bar-1200w.webp">
+                <source
+                        media="(min-width: 1800px)"
+                        type="image/webp"
+                        srcset="images/header_beverages_bar-1800w.webp">
+                <img
+                        src="images/header_beverages_bar-1200w.webp"
+                        alt="Beverages and Bar"
+                        class="menu-hero__img"
+                        loading="eager"
+                        width="1200"
+                        height="900">
+            </picture>
             <h4 class="text-bg-success bg-opacity-50 text-white">
                 Beverages & Bar<br>
                 饮品与酒吧
@@ -4476,7 +4538,7 @@
         <li><a href="#header-authentic">Authentic Szechuan & Cantonese</a></li>
         <li><a href="#header-specials-combos">Lunch Specials & Family Combos</a></li>
         <li><a href="#header-american-chinese">American Chinese</a></li>
-        <li><a href="#header-beverages">Beverages & Bar</a></li>
+        <li><a href="#header-beverages-bar">Beverages & Bar</a></li>
     </ul>
 </nav>
 <script src="js/bootstrap.bundle.min.js"></script>
