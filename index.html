@@ -127,6 +127,18 @@
                         >
                             Red Passion
                         </a></li>
+                        <li class="nav-item"><a
+                                href="#review-request"
+                                class="nav-link fw-semibold"
+                        >
+                            Review & Rewards
+                        </a></li>
+                        <li class="nav-item"><a
+                                href="#locations-signup"
+                                class="nav-link fw-semibold"
+                        >
+                            Our Locations
+                        </a></li>
                     </ul>
                 </div>
             </div>
@@ -4731,32 +4743,30 @@
         </section>
 
         <!-- Rewards Signup & Other Locations -->
-        <section id="locations-signup" class="container mb-5">
+        <section id="locations-signup" class="container mb-5 pb-5">
             <div class="row g-4">
                 <!-- Rewards Signup Form -->
                 <div class="col-12 col-md-4">
-                    <div class="card shadow">
-                        <div class="card-body">
-                            <h5 class="card-title">Join Our Rewards</h5>
-                            <p class="card-text">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center">Join Our Rewards</h5>
+                            <p class="card-text mb-3">
                                 Sign up today and earn points toward FREE dishes, exclusive offers, and more!
                             </p>
-                            <form id="rewards-form" class="row g-3">
-                                <div class="col-12">
+                            <form id="rewards-form" class="mt-auto">
+                                <div class="mb-3">
                                     <label for="rw-name" class="form-label">Name</label>
                                     <input type="text" class="form-control" id="rw-name" placeholder="Your Name" required>
                                 </div>
-                                <div class="col-12">
+                                <div class="mb-3">
                                     <label for="rw-email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="rw-email" placeholder="you@example.com" required>
                                 </div>
-                                <div class="col-12">
+                                <div class="mb-4">
                                     <label for="rw-phone" class="form-label">Phone</label>
                                     <input type="tel" class="form-control" id="rw-phone" placeholder="(555) 123-4567">
                                 </div>
-                                <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-success w-100">Sign Up</button>
-                                </div>
+                                <button type="submit" class="btn btn-success w-100">Sign Up</button>
                             </form>
                         </div>
                     </div>
@@ -4764,9 +4774,34 @@
 
                 <!-- Map of Other Locations -->
                 <div class="col-12 col-md-8">
-                    <div class="card shadow">
-                        <div class="card-body p-0">
-                            <div id="locations-map" style="width: 100%; height: 400px;"></div>
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 text-center">Our Maryland and Virginia Locations</h5>
+                            <div class="row g-4">
+                                <!-- China Jade Rockville -->
+                                <div class="col-12 col-md-6">
+                                    <div class="ratio ratio-4x3">
+                                        <iframe
+                                                src="https://www.google.com/maps?q=16805%20Crabbs%20Branch%20Way%2C%20Rockville%2C%20MD&output=embed"
+                                                allowfullscreen
+                                                loading="lazy">
+                                        </iframe>
+                                    </div>
+                                    <p class="mt-2 text-center fw-semibold mb-0">China Jade Rockville</p>
+                                </div>
+
+                                <!-- Hong Kong Palace -->
+                                <div class="col-12 col-md-6">
+                                    <div class="ratio ratio-4x3">
+                                        <iframe
+                                                src="https://www.google.com/maps?q=6387%20Seven%20Corners%20Center%2C%20Falls%20Church%2C%20VA&output=embed"
+                                                allowfullscreen
+                                                loading="lazy">
+                                        </iframe>
+                                    </div>
+                                    <p class="mt-2 text-center fw-semibold mb-0">Hong Kong Palace</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -4795,51 +4830,6 @@
             gutter: 0
         });
     });
-</script>
-<script>
-    function initMap() {
-        // Center map roughly on the DMV
-        const center = { lat: 38.90, lng: -77.15 };
-        const map = new google.maps.Map(document.getElementById("locations-map"), {
-            zoom: 10,
-            center: center,
-        });
-
-        // Define your locations
-        const locations = [
-            {
-                name: "China Jade Rockville",
-                position: { lat: 39.0936, lng: -77.1531 },
-                info: `<strong>China Jade Rockville</strong><br>16805 Crabbs Branch Way, Rockville, MD`
-            },
-            {
-                name: "Hong Kong Palace",
-                position: { lat: 38.8814, lng: -77.1909 },
-                info: `<strong>Hong Kong Palace</strong><br>6387 Seven Corners Center, Falls Church, VA`
-            }
-        ];
-
-        // Add markers and info windows
-        locations.forEach(loc => {
-            const marker = new google.maps.Marker({
-                position: loc.position,
-                map: map,
-                title: loc.name,
-                icon: {
-                    url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
-                }
-            });
-            const infoWindow = new google.maps.InfoWindow({
-                content: loc.info
-            });
-            marker.addListener("click", () => {
-                infoWindow.open(map, marker);
-            });
-        });
-    }
-</script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 </script>
 <script src="js/script.js"></script>
 </body>
