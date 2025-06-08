@@ -8,7 +8,7 @@ SRC_DIR="images"
 
 # List of “basename widths…” entries
 IMAGES=(
-  "comm_news_actress             400 800"
+  "comm_soccer             400 800"
 )
 
 # Ensure cwebp is installed
