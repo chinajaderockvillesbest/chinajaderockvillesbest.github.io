@@ -281,7 +281,7 @@
 }
 
 /* review-request tweaks */
-#review-request .qr-logo-container {
+#rewards .qr-logo-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -290,14 +290,14 @@
 }
 
 /* QR code should take up ~50% of viewport width, capped */
-#review-request .qr-logo-container .qr {
+#rewards .qr-logo-container .qr {
     width: 50vw;
     max-width: 300px;
     height: auto;
 }
 
 /* Logo stays beside it, but smaller */
-#review-request .qr-logo-container .logo {
+#rewards .qr-logo-container .logo {
     width: auto;
     max-width: 150px;
     height: auto;
@@ -305,7 +305,7 @@
 
 /* On wider screens, let the QR grow a bit more */
 @media (min-width: 768px) {
-    #review-request .qr-logo-container .qr {
+    #rewards .qr-logo-container .qr {
         max-width: 400px;
     }
 }
