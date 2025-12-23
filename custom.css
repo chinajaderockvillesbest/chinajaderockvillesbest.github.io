@@ -400,3 +400,8 @@
     white-space: pre-wrap;     /* allow wrapping if it’s multiline */
     max-width: 90%;            /* don’t let it blow past the viewport */
 }
+
+:target {
+  scroll-margin-top: 90px;   /* top fixed navbar height */
+  scroll-margin-bottom: 90px; /* bottom nav height */
+}
