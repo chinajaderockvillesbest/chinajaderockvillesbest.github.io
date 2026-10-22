@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1792638839941,
+  "projectRoot": "c:\\WebSite\\chinajaderockvillesbest.github.io",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": {
+      "defaultBranch": "master",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "files": {
+      "path": "files",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1792638839897,
+      "keyFiles": [
+        "chinajade11_authenticChinese_szechuanLunch.pdf",
+        "chinajade12_lunchSpecial.pdf",
+        "chinajade13_.pdf",
+        "chinajade6_authenticChinese_sechuanAppetizers_cantoneseAppetizers_soup.pdf",
+        "chinajade_americanChinese_merged.pdf"
+      ]
+    },
+    "images": {
+      "path": "images",
+      "purpose": null,
+      "fileCount": 75,
+      "lastAccessed": 1792638839899,
+      "keyFiles": [
+        "comm_appreciation_2016-400w.webp",
+        "comm_appreciation_2016-800w.webp",
+        "comm_appreciation_2016.jpg",
+        "comm_appreciation_2017-400w.webp",
+        "comm_appreciation_2017-800w.webp"
+      ]
+    },
+    "intlTelInput": {
+      "path": "intlTelInput",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1792638839899,
+      "keyFiles": [
+        "intlTelInput.css",
+        "intlTelInput.min.js",
+        "utils.js"
+      ]
+    },
+    "js": {
+      "path": "js",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1792638839899,
+      "keyFiles": [
+        "bootstrap.bundle.min.js",
+        "script.js",
+        "send_signup_email.php"
+      ]
+    }
+  },
+  "hotPaths": [],
+  "userDirectives": []
+}
